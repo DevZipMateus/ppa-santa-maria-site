@@ -28,7 +28,7 @@ const ServicesSection = () => {
       icon: Shield,
       title: "Cancelas automáticas",
       description: "Controle de acesso automatizado para condomínios e empresas",
-      features: ["Controle de acesso", "Sistemas inteligentes", "Alta durabilidade"]
+      features: ["Sistemas inteligentes", "Alta durabilidade"]
     },
     {
       icon: Settings,
