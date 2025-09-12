@@ -63,14 +63,14 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-background">
+    <section id="services" className="py-20 bg-background notranslate" translate="no">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 notranslate" translate="no">
               Nossos serviços
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto notranslate" translate="no">
               Oferecemos soluções completas em segurança eletrônica e automação, com produtos de qualidade e suporte técnico especializado
             </p>
           </div>
@@ -105,7 +105,7 @@ const ServicesSection = () => {
                   <div className="bg-primary/10 p-4 rounded-lg w-fit mb-4 group-hover:bg-primary/20 transition-colors">
                     <service.icon className="h-8 w-8 text-primary" />
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
+                  <h3 className="text-xl font-semibold text-foreground mb-3 notranslate" translate="no">
                     {service.title}
                   </h3>
                   <p className="text-muted-foreground mb-4">

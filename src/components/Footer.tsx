@@ -5,7 +5,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
     return (
-      <footer className="bg-foreground text-background">
+      <footer className="bg-foreground text-background notranslate" translate="no">
         <div className="container mx-auto px-4 py-12 sm:py-16">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {/* Logo and Description */}
@@ -66,11 +66,11 @@ const Footer = () => {
 
             {/* Services */}
             <div className="sm:col-span-1">
-              <h3 className="font-semibold text-base sm:text-lg mb-4 sm:mb-6">Serviços</h3>
-              <ul className="space-y-2 sm:space-y-3 text-background/80 text-sm sm:text-base">
+              <h3 className="font-semibold text-base sm:text-lg mb-4 sm:mb-6 notranslate" translate="no">Serviços</h3>
+              <ul className="space-y-2 sm:space-y-3 text-background/80 text-sm sm:text-base notranslate" translate="no">
                 <li>Movimentadores de portões</li>
                 <li>Portas automáticas</li>
-                <li>Cancelas automáticas</li>
+                <li className="notranslate" translate="no"><span className="notranslate" translate="no">Cancelas</span> automáticas</li>
                 <li>Peças de reposição</li>
                 <li>Manutenções</li>
               </ul>

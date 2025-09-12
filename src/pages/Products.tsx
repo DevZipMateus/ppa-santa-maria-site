@@ -396,7 +396,7 @@ const Products = () => {
       
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="bg-gradient-primary py-16">
+        <section className="bg-gradient-primary py-16 notranslate" translate="no">
           <div className="container mx-auto px-4">
             <div className="flex items-center gap-4 mb-6">
               <Link to="/">
@@ -405,10 +405,10 @@ const Products = () => {
                 </Button>
               </Link>
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
+                <h1 className="text-4xl md:text-5xl font-bold text-white mb-2 notranslate" translate="no">
                   Nossos Produtos
                 </h1>
-                <p className="text-white/90 text-lg">
+                <p className="text-white/90 text-lg notranslate" translate="no">
                   Equipamentos de alta qualidade para automação e segurança eletrônica
                 </p>
               </div>
@@ -423,10 +423,10 @@ const Products = () => {
               {productCategories.map((category, index) => (
                 <Card key={index} className="border-border shadow-card-custom">
                   <CardContent className="p-8">
-                    <h2 className="text-2xl font-bold text-foreground mb-3">
+                    <h2 className="text-2xl font-bold text-foreground mb-3 notranslate" translate="no">
                       {category.title}
                     </h2>
-                    <p className="text-muted-foreground mb-6 text-lg">
+                    <p className="text-muted-foreground mb-6 text-lg notranslate" translate="no">
                       {category.description}
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
@@ -447,7 +447,7 @@ const Products = () => {
                             />
                           </div>
                           <div className="p-3 sm:p-4 space-y-3">
-                            <h3 className="font-semibold text-foreground text-xs sm:text-sm leading-tight">
+                            <h3 className="font-semibold text-foreground text-xs sm:text-sm leading-tight notranslate" translate="no">
                               {product.name}
                             </h3>
                             

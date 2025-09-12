@@ -110,3 +110,42 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* Anti-translation CSS classes */
+.notranslate {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.notranslate::before,
+.notranslate::after {
+  content: none !important;
+}
+
+/* Prevent Google Translate styling */
+.skiptranslate {
+  color: inherit !important;
+  background-color: inherit !important;
+  border: none !important;
+}
+
+/* Additional utility classes */
+.bg-gradient-hero {
+  background: var(--gradient-hero);
+}
+
+.bg-gradient-subtle {
+  background: var(--gradient-subtle);
+}
+
+.shadow-card-custom {
+  box-shadow: var(--shadow-card);
+}
+
+.shadow-elegant {
+  box-shadow: var(--shadow-elegant);
+}

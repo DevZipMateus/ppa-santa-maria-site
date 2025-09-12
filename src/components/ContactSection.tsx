@@ -16,14 +16,14 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-background">
+    <section id="contact" className="py-20 bg-background notranslate" translate="no">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 notranslate" translate="no">
               Entre em contato
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto notranslate" translate="no">
               Estamos prontos para atender você! Entre em contato conosco pelos canais abaixo ou visite nossa loja em Santa Maria
             </p>
           </div>

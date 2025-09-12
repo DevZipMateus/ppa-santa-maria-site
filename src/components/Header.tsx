@@ -73,7 +73,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+          <nav translate="no" className="hidden lg:flex items-center space-x-6 xl:space-x-8 notranslate">
             {menuItems.map((item) => (
               item.isRoute ? (
                 <Link
@@ -99,7 +99,8 @@ const Header = () => {
           <div className="hidden lg:block">
             <Button 
               onClick={() => scrollToSection('contact')}
-              className="bg-primary hover:bg-primary/90 text-sm xl:text-base px-4 xl:px-6"
+              className="bg-primary hover:bg-primary/90 text-sm xl:text-base px-4 xl:px-6 notranslate"
+              translate="no"
             >
               Contato
             </Button>

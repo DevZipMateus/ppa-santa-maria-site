@@ -3,23 +3,23 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 bg-gradient-subtle">
+    <section id="about" className="py-20 bg-gradient-subtle notranslate" translate="no">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 notranslate" translate="no">
               Sobre a Lopes Segurança Eletrônica
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto notranslate" translate="no">
               Distribuidor autorizado PPA em Santa Maria desde 2014, com o objetivo de manter a qualidade e segurança aos nossos clientes
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
-              <h3 className="text-2xl font-semibold text-foreground mb-6">Nossa história</h3>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                Buscamos trazer sempre produtos com diferenciais ao mercado, garantindo a satisfação e conforto em cada equipamento vendido. Nosso foco está em movimentadores de portões residenciais e para condomínios, portas automáticas, cancelas automáticas e peças para reposição.
+              <h3 className="text-2xl font-semibold text-foreground mb-6 notranslate" translate="no">Nossa história</h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed notranslate" translate="no">
+                Buscamos trazer sempre produtos com diferenciais ao mercado, garantindo a satisfação e conforto em cada equipamento vendido. Nosso foco está em movimentadores de portões residenciais e para condomínios, portas automáticas, <span className="notranslate" translate="no">cancelas</span> automáticas e peças para reposição.
               </p>
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 Buscando ampliar o raio de atendimento, levamos nossos produtos por toda Santa Maria e região, dando suporte técnico e criando novos instaladores capacitados para o mercado.
