@@ -33,7 +33,7 @@ const ServicesSection = () => {
     {
       icon: Settings,
       title: "Peças de reposição",
-      description: "Peças originais e compatíveis para todos os equipamentos",
+      description: "Peças originais e compatíveis para todos os equipamentos PPA",
       features: ["Peças originais", "Garantia de qualidade", "Pronta entrega"]
     },
     {
