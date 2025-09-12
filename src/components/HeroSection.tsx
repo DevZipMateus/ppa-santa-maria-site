@@ -1,22 +1,16 @@
 import { Shield, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroBg from '@/assets/hero-bg.png';
-
 const HeroSection = () => {
-  return (
-    <section 
-      id="home" 
-      className="min-h-screen flex items-center text-white relative"
-      style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${heroBg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
-    >
+  return <section id="home" className="min-h-screen flex items-center text-white relative" style={{
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${heroBg})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat'
+  }}>
       <div className="container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8">
+          <div className="backdrop-blur-sm rounded-2xl p-8 mb-8 bg-black/[0.37]">
             <Shield className="h-16 w-16 mx-auto mb-6 text-white/90" />
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               Lopes Segurança Eletrônica
@@ -30,26 +24,21 @@ const HeroSection = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button 
-              size="lg"
-              className="bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-sm"
-              onClick={() => {
-                const element = document.getElementById('services');
-                if (element) {
-                  const headerHeight = 80;
-                  const elementPosition = element.getBoundingClientRect().top;
-                  const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
-                  window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-                }
-              }}
-            >
+            <Button size="lg" className="bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-sm" onClick={() => {
+            const element = document.getElementById('services');
+            if (element) {
+              const headerHeight = 80;
+              const elementPosition = element.getBoundingClientRect().top;
+              const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+              });
+            }
+          }}>
               Nossos serviços
             </Button>
-            <Button 
-              size="lg"
-              className="bg-accent hover:bg-accent/90 text-accent-foreground"
-              asChild
-            >
+            <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground" asChild>
               <a href="https://wa.me/5555981079091" target="_blank" rel="noopener noreferrer">
                 <Phone className="h-4 w-4 mr-2" />
                 WhatsApp
@@ -82,8 +71,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
