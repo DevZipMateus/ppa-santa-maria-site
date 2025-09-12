@@ -73,13 +73,13 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             {menuItems.map((item) => (
               item.isRoute ? (
                 <Link
                   key={item.id}
                   to={`/${item.id}`}
-                  className="text-foreground hover:text-primary transition-colors font-medium"
+                  className="text-foreground hover:text-primary transition-colors font-medium text-sm xl:text-base"
                 >
                   {item.label}
                 </Link>
@@ -87,7 +87,7 @@ const Header = () => {
                 <button
                   key={item.id}
                   onClick={() => handleMenuClick(item)}
-                  className="text-foreground hover:text-primary transition-colors font-medium"
+                  className="text-foreground hover:text-primary transition-colors font-medium text-sm xl:text-base"
                 >
                   {item.label}
                 </button>
@@ -96,10 +96,10 @@ const Header = () => {
           </nav>
 
           {/* Contact Button */}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <Button 
               onClick={() => scrollToSection('contact')}
-              className="bg-primary hover:bg-primary/90"
+              className="bg-primary hover:bg-primary/90 text-sm xl:text-base px-4 xl:px-6"
             >
               Contato
             </Button>
@@ -109,7 +109,7 @@ const Header = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="lg:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -118,15 +118,15 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-border">
-            <div className="flex flex-col space-y-4">
+          <nav className="lg:hidden py-4 border-t border-border bg-background/95 backdrop-blur-md">
+            <div className="flex flex-col space-y-2">
               {menuItems.map((item) => (
                 item.isRoute ? (
                   <Link
                     key={item.id}
                     to={`/${item.id}`}
                     onClick={() => setIsMenuOpen(false)}
-                    className="text-left text-foreground hover:text-primary transition-colors font-medium py-2"
+                    className="text-left text-foreground hover:text-primary transition-colors font-medium py-3 px-2 hover:bg-accent/50 rounded-md"
                   >
                     {item.label}
                   </Link>
@@ -134,7 +134,7 @@ const Header = () => {
                   <button
                     key={item.id}
                     onClick={() => handleMenuClick(item)}
-                    className="text-left text-foreground hover:text-primary transition-colors font-medium py-2"
+                    className="text-left text-foreground hover:text-primary transition-colors font-medium py-3 px-2 hover:bg-accent/50 rounded-md"
                   >
                     {item.label}
                   </button>

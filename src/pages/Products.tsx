@@ -308,29 +308,29 @@ const Products = () => {
       
       {/* Cart Badge */}
       {cart.length > 0 && (
-        <div className="fixed top-24 right-4 z-50">
+        <div className="fixed top-20 sm:top-24 right-2 sm:right-4 z-50">
           <Dialog open={isCartOpen} onOpenChange={setIsCartOpen}>
             <DialogTrigger asChild>
               <Button
-                className="bg-green-600 hover:bg-green-700 text-white rounded-full shadow-lg"
-                size="lg"
+                className="bg-green-600 hover:bg-green-700 text-white rounded-full shadow-lg text-xs sm:text-sm px-3 sm:px-4 py-2 sm:py-3"
+                size="sm"
               >
-                <ShoppingCart className="h-5 w-5 mr-2" />
-                Carrinho ({getTotalItems()})
+                <ShoppingCart className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2" />
+                <span className="hidden xs:inline">Carrinho </span>({getTotalItems()})
               </Button>
             </DialogTrigger>
-            <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+            <DialogContent className="max-w-[95vw] sm:max-w-2xl max-h-[85vh] overflow-y-auto mx-2 sm:mx-auto">
               <DialogHeader>
-                <DialogTitle className="flex items-center gap-2">
-                  <ShoppingCart className="h-5 w-5" />
+                <DialogTitle className="flex items-center gap-2 text-base sm:text-lg">
+                  <ShoppingCart className="h-4 w-4 sm:h-5 sm:w-5" />
                   Meu Carrinho ({getTotalItems()} itens)
                 </DialogTitle>
               </DialogHeader>
               
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {cart.map((item, index) => (
-                  <div key={index} className="flex items-center gap-4 p-4 border rounded-lg">
-                    <div className="w-16 h-16 bg-black rounded-lg overflow-hidden flex-shrink-0">
+                  <div key={index} className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 border rounded-lg">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-black rounded-lg overflow-hidden flex-shrink-0">
                       <img 
                         src={item.image} 
                         alt={item.name}
@@ -341,50 +341,50 @@ const Products = () => {
                       />
                     </div>
                     
-                    <div className="flex-1">
-                      <h4 className="font-semibold text-sm">{item.name}</h4>
-                      <p className="text-xs text-muted-foreground">{item.category}</p>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-semibold text-xs sm:text-sm leading-tight truncate">{item.name}</h4>
+                      <p className="text-xs text-muted-foreground truncate">{item.category}</p>
                     </div>
                     
-                    <div className="flex items-center space-x-2">
+                    <div className="flex items-center space-x-1 sm:space-x-2 flex-shrink-0">
                       <Button
                         variant="outline"
                         size="sm"
                         onClick={() => updateCartItemQuantity(item.name, -1)}
-                        className="h-8 w-8 p-0"
+                        className="h-6 w-6 sm:h-8 sm:w-8 p-0"
                       >
-                        <Minus className="h-3 w-3" />
+                        <Minus className="h-2 w-2 sm:h-3 sm:w-3" />
                       </Button>
-                      <span className="text-sm font-medium min-w-[2rem] text-center">
+                      <span className="text-xs sm:text-sm font-medium min-w-[1.5rem] sm:min-w-[2rem] text-center">
                         {item.quantity}
                       </span>
                       <Button
                         variant="outline"
                         size="sm"
                         onClick={() => updateCartItemQuantity(item.name, 1)}
-                        className="h-8 w-8 p-0"
+                        className="h-6 w-6 sm:h-8 sm:w-8 p-0"
                       >
-                        <Plus className="h-3 w-3" />
+                        <Plus className="h-2 w-2 sm:h-3 sm:w-3" />
                       </Button>
                       
                       <Button
                         variant="destructive"
                         size="sm"
                         onClick={() => removeFromCart(item.name)}
-                        className="h-8 w-8 p-0 ml-2"
+                        className="h-6 w-6 sm:h-8 sm:w-8 p-0 ml-1 sm:ml-2"
                       >
-                        <Trash2 className="h-3 w-3" />
+                        <Trash2 className="h-2 w-2 sm:h-3 sm:w-3" />
                       </Button>
                     </div>
                   </div>
                 ))}
                 
-                <div className="flex justify-between gap-2 pt-4 border-t">
-                  <Button variant="outline" onClick={clearCart}>
+                <div className="flex flex-col sm:flex-row justify-between gap-2 pt-4 border-t">
+                  <Button variant="outline" onClick={clearCart} className="text-xs sm:text-sm">
                     Limpar Carrinho
                   </Button>
-                  <Button onClick={sendWhatsAppCart} className="bg-green-600 hover:bg-green-700">
-                    <Phone className="h-4 w-4 mr-2" />
+                  <Button onClick={sendWhatsAppCart} className="bg-green-600 hover:bg-green-700 text-xs sm:text-sm">
+                    <Phone className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
                     Enviar no WhatsApp
                   </Button>
                 </div>
@@ -429,13 +429,13 @@ const Products = () => {
                     <p className="text-muted-foreground mb-6 text-lg">
                       {category.description}
                     </p>
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
                       {category.products.map((product, productIndex) => (
                         <div 
                           key={productIndex}
                           className="bg-background rounded-lg border border-border shadow-sm overflow-hidden hover:shadow-md transition-shadow"
                         >
-                          <div className="aspect-square relative overflow-hidden bg-black p-4">
+                          <div className="aspect-square relative overflow-hidden bg-black p-3 sm:p-4">
                             <img 
                               src={product.image} 
                               alt={product.name}
@@ -446,8 +446,8 @@ const Products = () => {
                               }}
                             />
                           </div>
-                          <div className="p-4 space-y-3">
-                            <h3 className="font-semibold text-foreground text-sm leading-tight">
+                          <div className="p-3 sm:p-4 space-y-3">
+                            <h3 className="font-semibold text-foreground text-xs sm:text-sm leading-tight">
                               {product.name}
                             </h3>
                             
@@ -457,18 +457,18 @@ const Products = () => {
                                 variant="outline"
                                 size="sm"
                                 onClick={() => updateQuantity(product.name, -1)}
-                                className="h-8 w-8 p-0"
+                                className="h-7 w-7 sm:h-8 sm:w-8 p-0"
                               >
                                 <Minus className="h-3 w-3" />
                               </Button>
-                              <span className="text-sm font-medium min-w-[2rem] text-center">
+                              <span className="text-xs sm:text-sm font-medium min-w-[2rem] text-center">
                                 {quantities[product.name] || 1}
                               </span>
                               <Button
                                 variant="outline"
                                 size="sm"
                                 onClick={() => updateQuantity(product.name, 1)}
-                                className="h-8 w-8 p-0"
+                                className="h-7 w-7 sm:h-8 sm:w-8 p-0"
                               >
                                 <Plus className="h-3 w-3" />
                               </Button>
@@ -478,19 +478,19 @@ const Products = () => {
                             <div className="flex flex-col space-y-2">
                               <Button
                                 onClick={() => addToCart(product.name, category.title, product.image)}
-                                className="w-full"
+                                className="w-full text-xs sm:text-sm"
                                 size="sm"
                               >
-                                <ShoppingCart className="h-4 w-4 mr-2" />
+                                <ShoppingCart className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
                                 Adicionar ao Carrinho
                               </Button>
                               <Button
                                 onClick={() => requestQuote(product.name, category.title)}
                                 variant="outline"
-                                className="w-full"
+                                className="w-full text-xs sm:text-sm"
                                 size="sm"
                               >
-                                <FileText className="h-4 w-4 mr-2" />
+                                <FileText className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
                                 Solicitar Orçamento
                               </Button>
                             </div>

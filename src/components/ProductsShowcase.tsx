@@ -68,78 +68,81 @@ const ProductsShowcase = () => {
     setCurrentIndex(currentIndex === featuredProducts.length - 1 ? 0 : currentIndex + 1);
   };
 
-  return (
-    <section className="py-16 bg-accent/20">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Um Pouco de Nossos Produtos
-          </h2>
-          <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
-            Conheça alguns dos principais produtos que oferecemos para automação e segurança eletrônica
-          </p>
-          <Button asChild size="lg" className="animate-fade-in">
-            <Link to="/produtos">
-              Ver Todos os Produtos
-              <ArrowRight className="h-5 w-5 ml-2" />
-            </Link>
-          </Button>
-        </div>
+    return (
+      <section className="py-12 sm:py-16 lg:py-20 bg-accent/20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Um Pouco de Nossos Produtos
+            </h2>
+            <p className="text-muted-foreground text-base sm:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
+              Conheça alguns dos principais produtos que oferecemos para automação e segurança eletrônica
+            </p>
+            <Button asChild size="lg" className="animate-fade-in text-sm sm:text-base">
+              <Link to="/produtos">
+                Ver Todos os Produtos
+                <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 ml-2" />
+              </Link>
+            </Button>
+          </div>
 
-        <div className="relative max-w-4xl mx-auto">
-          {/* Main Carousel */}
-          <div className="relative overflow-hidden rounded-2xl bg-black shadow-2xl">
-            <div className="aspect-[16/9] relative">
-              <img
-                src={featuredProducts[currentIndex].image}
-                alt={featuredProducts[currentIndex].name}
-                className="w-full h-full object-contain transition-opacity duration-500"
-                onError={(e) => {
-                  e.currentTarget.src = '/placeholder.svg';
-                }}
-              />
-              
-              {/* Overlay with product name */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-                <h3 className="text-white text-xl font-semibold">
-                  {featuredProducts[currentIndex].name}
-                </h3>
+          <div className="relative max-w-6xl mx-auto">
+            {/* Main Carousel */}
+            <div className="relative overflow-hidden rounded-xl sm:rounded-2xl bg-black shadow-2xl">
+              <div className="aspect-[4/3] sm:aspect-[16/10] lg:aspect-[16/9] relative">
+                <img
+                  src={featuredProducts[currentIndex].image}
+                  alt={featuredProducts[currentIndex].name}
+                  className="w-full h-full object-contain transition-opacity duration-500"
+                  onError={(e) => {
+                    e.currentTarget.src = '/placeholder.svg';
+                  }}
+                />
+                
+                {/* Overlay with product name */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-3 sm:p-6">
+                  <h3 className="text-white text-base sm:text-xl lg:text-2xl font-semibold text-center sm:text-left">
+                    {featuredProducts[currentIndex].name}
+                  </h3>
+                </div>
               </div>
+
+              {/* Navigation Arrows */}
+              <button
+                onClick={goToPrevious}
+                className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white rounded-full p-2 sm:p-3 transition-colors backdrop-blur-sm"
+                aria-label="Produto anterior"
+              >
+                <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6" />
+              </button>
+              <button
+                onClick={goToNext}
+                className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white rounded-full p-2 sm:p-3 transition-colors backdrop-blur-sm"
+                aria-label="Próximo produto"
+              >
+                <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6" />
+              </button>
             </div>
 
-            {/* Navigation Arrows */}
-            <button
-              onClick={goToPrevious}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white rounded-full p-2 transition-colors backdrop-blur-sm"
-            >
-              <ChevronLeft className="h-6 w-6" />
-            </button>
-            <button
-              onClick={goToNext}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white rounded-full p-2 transition-colors backdrop-blur-sm"
-            >
-              <ChevronRight className="h-6 w-6" />
-            </button>
-          </div>
-
-          {/* Dots Indicators */}
-          <div className="flex justify-center mt-6 space-x-2">
-            {featuredProducts.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  index === currentIndex 
-                    ? 'bg-primary' 
-                    : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
-                }`}
-              />
-            ))}
+            {/* Dots Indicators */}
+            <div className="flex justify-center mt-4 sm:mt-6 space-x-1 sm:space-x-2 overflow-x-auto px-4">
+              {featuredProducts.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors flex-shrink-0 ${
+                    index === currentIndex 
+                      ? 'bg-primary' 
+                      : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
+                  }`}
+                  aria-label={`Ver produto ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  );
+      </section>
+    );
 };
 
 export default ProductsShowcase;
