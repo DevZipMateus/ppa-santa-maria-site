@@ -18,7 +18,7 @@ const Products = () => {
         },
         {
           name: "DZ Stark 600 PPA - Até 400kg",
-          image: "/galeria/dz_stark_600_ppa_kit_3_0mt_de_cremalheira_pop_residencial_2_controles_433mhz.%E2%80%A2%20aplicação:%20residências%E2%80%A2%20modelo:%20mono%E2%80%A2%20peso:%20até%20400kg.jpg"
+          image: "/galeria/dz_stark_600_ppa_kit_3_0mt_de_cremalheira_pop_residencial_2_controles_433mhz.\n• aplicação: residências\n• modelo: mono\n• peso: até 400kg.jpg"
         },
         {
           name: "Pivotante PPA - Residencial",
@@ -40,7 +40,7 @@ const Products = () => {
         },
         {
           name: "DZ Industrial PPA - Até 1500kg",
-          image: "/galeria/dz_industrial_ppa_modelo_mono_ou_jet_flex_aplicacao_residencias_comercios_industrias_ou_condominios_.200kg%E2%80%A2%20kit:%203,0mt%20de%20cremalheira%20gold%20industrial%20e%202%20controles%20433mhz.jpg"
+          image: "/galeria/dz_industrial_ppa_modelo_mono_ou_jet_flex_aplicacao_residencias_comercios_industrias_ou_condominios_.200kg\n• kit: 3,0mt de cremalheira gold industrial e 2 controles 433mhz.jpg"
         },
         {
           name: "BV Condominium PPA - Kit 2 controles",
@@ -70,7 +70,7 @@ const Products = () => {
         },
         {
           name: "Porta Social Wind 200 - 24v",
-          image: "/galeria/porta_social_wind_200_ppa_aplicacao_vidro_ou_caixilho_1_ou_2_folhas_moveis_cores_aluminio_natural_pi.%E2%80%A2%20disponível%20na%20tecnologia%2024v.jpg"
+          image: "/galeria/porta_social_wind_200_ppa_aplicacao_vidro_ou_caixilho_1_ou_2_folhas_moveis_cores_aluminio_natural_pi.\n• disponível na tecnologia 24v.jpg"
         }
       ]
     },
@@ -136,7 +136,7 @@ const Products = () => {
         },
         {
           name: "Botoeira BT Steel - 1,2,4,6 botões",
-          image: "/galeria/botoeira_bt_steel_acionador_de_abertura.%20um%20dispositivo%20de%20comando%20com%20a%20função%20de%20ligar%20e%20desligar%20a%20carga%20de%20um%20circuito,%20a%20partir%20de%20um%20acionamento%20manual,%20com%201,%202,%204%20e%206%20botões%E2%80%A2%20cores:%20preta,%20cinza,%20branca%20e%20inox.jpg"
+          image: "/galeria/botoeira_bt_steel_acionador_de_abertura. um dispositivo de comando com a função de ligar e desligar a carga de um circuito, a partir de um acionamento manual, com 1, 2, 4 e 6 botões\n• cores: preta, cinza, branca e inox.jpg"
         },
         {
           name: "Sinaleira Lux - Visual e sonora",
@@ -197,6 +197,9 @@ const Products = () => {
                               alt={product.name}
                               className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
                               loading="lazy"
+                              onError={(e) => {
+                                e.currentTarget.src = '/placeholder.svg';
+                              }}
                             />
                           </div>
                           <div className="p-4">
