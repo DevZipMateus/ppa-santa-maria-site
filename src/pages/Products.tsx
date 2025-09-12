@@ -1,7 +1,8 @@
-import { ArrowLeft, Phone, Mail, ShoppingCart, Plus, Minus, FileText } from 'lucide-react';
+import { ArrowLeft, Phone, Mail, ShoppingCart, Plus, Minus, FileText, X, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import Header from '@/components/Header';
@@ -17,12 +18,25 @@ interface CartItem {
 const Products = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [quantities, setQuantities] = useState<{ [key: string]: number }>({});
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const updateQuantity = (productName: string, change: number) => {
     setQuantities(prev => ({
       ...prev,
       [productName]: Math.max(1, (prev[productName] || 1) + change)
     }));
+  };
+
+  const updateCartItemQuantity = (productName: string, change: number) => {
+    setCart(prev => prev.map(item =>
+      item.name === productName
+        ? { ...item, quantity: Math.max(1, item.quantity + change) }
+        : item
+    ));
+  };
+
+  const removeFromCart = (productName: string) => {
+    setCart(prev => prev.filter(item => item.name !== productName));
   };
 
   const addToCart = (productName: string, categoryTitle: string) => {
@@ -69,6 +83,10 @@ const Products = () => {
     
     const whatsappUrl = `https://wa.me/5555981079091?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
+    
+    // Close cart and clear it after sending
+    setIsCartOpen(false);
+    setCart([]);
   };
 
   const requestQuote = (productName: string, categoryTitle: string) => {
@@ -290,14 +308,77 @@ const Products = () => {
       {/* Cart Badge */}
       {cart.length > 0 && (
         <div className="fixed top-24 right-4 z-50">
-          <Button
-            onClick={sendWhatsAppCart}
-            className="bg-green-600 hover:bg-green-700 text-white rounded-full shadow-lg"
-            size="lg"
-          >
-            <ShoppingCart className="h-5 w-5 mr-2" />
-            Carrinho ({getTotalItems()})
-          </Button>
+          <Dialog open={isCartOpen} onOpenChange={setIsCartOpen}>
+            <DialogTrigger asChild>
+              <Button
+                className="bg-green-600 hover:bg-green-700 text-white rounded-full shadow-lg"
+                size="lg"
+              >
+                <ShoppingCart className="h-5 w-5 mr-2" />
+                Carrinho ({getTotalItems()})
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+              <DialogHeader>
+                <DialogTitle className="flex items-center gap-2">
+                  <ShoppingCart className="h-5 w-5" />
+                  Meu Carrinho ({getTotalItems()} itens)
+                </DialogTitle>
+              </DialogHeader>
+              
+              <div className="space-y-4">
+                {cart.map((item, index) => (
+                  <div key={index} className="flex items-center justify-between p-4 border rounded-lg">
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-sm">{item.name}</h4>
+                      <p className="text-xs text-muted-foreground">{item.category}</p>
+                    </div>
+                    
+                    <div className="flex items-center space-x-2">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => updateCartItemQuantity(item.name, -1)}
+                        className="h-8 w-8 p-0"
+                      >
+                        <Minus className="h-3 w-3" />
+                      </Button>
+                      <span className="text-sm font-medium min-w-[2rem] text-center">
+                        {item.quantity}
+                      </span>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => updateCartItemQuantity(item.name, 1)}
+                        className="h-8 w-8 p-0"
+                      >
+                        <Plus className="h-3 w-3" />
+                      </Button>
+                      
+                      <Button
+                        variant="destructive"
+                        size="sm"
+                        onClick={() => removeFromCart(item.name)}
+                        className="h-8 w-8 p-0 ml-2"
+                      >
+                        <Trash2 className="h-3 w-3" />
+                      </Button>
+                    </div>
+                  </div>
+                ))}
+                
+                <div className="flex justify-between gap-2 pt-4 border-t">
+                  <Button variant="outline" onClick={clearCart}>
+                    Limpar Carrinho
+                  </Button>
+                  <Button onClick={sendWhatsAppCart} className="bg-green-600 hover:bg-green-700">
+                    <Phone className="h-4 w-4 mr-2" />
+                    Enviar no WhatsApp
+                  </Button>
+                </div>
+              </div>
+            </DialogContent>
+          </Dialog>
         </div>
       )}
       
