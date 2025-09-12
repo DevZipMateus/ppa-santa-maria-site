@@ -136,30 +136,6 @@ const ProductsShowcase = () => {
               />
             ))}
           </div>
-
-          {/* Thumbnail Strip */}
-          <div className="mt-8 grid grid-cols-5 md:grid-cols-10 gap-2">
-            {featuredProducts.map((product, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`aspect-square rounded-lg overflow-hidden border-2 transition-all hover:scale-105 ${
-                  index === currentIndex 
-                    ? 'border-primary shadow-lg' 
-                    : 'border-transparent hover:border-primary/50'
-                }`}
-              >
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-contain bg-black/5"
-                  onError={(e) => {
-                    e.currentTarget.src = '/placeholder.svg';
-                  }}
-                />
-              </button>
-            ))}
-          </div>
         </div>
       </div>
     </section>
