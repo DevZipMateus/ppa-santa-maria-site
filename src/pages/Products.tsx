@@ -181,17 +181,17 @@ const Products = () => {
                     <p className="text-muted-foreground mb-6 text-lg">
                       {category.description}
                     </p>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                       {category.products.map((product, productIndex) => (
                         <div 
                           key={productIndex}
                           className="bg-background rounded-lg border border-border shadow-sm overflow-hidden hover:shadow-md transition-shadow"
                         >
-                          <div className="aspect-video relative overflow-hidden bg-accent/10">
+                          <div className="aspect-square relative overflow-hidden bg-accent/10 p-4">
                             <img 
                               src={product.image} 
                               alt={product.name}
-                              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                              className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
                               loading="lazy"
                             />
                           </div>
