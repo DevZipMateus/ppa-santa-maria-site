@@ -70,7 +70,7 @@ const Products = () => {
         },
         {
           name: "Porta Social Wind 200 - 24v",
-          image: "/galeria/porta_social_wind_200_ppa_aplicacao_vidro_ou_caixilho_1_ou_2_folhas_moveis_cores_aluminio_natural_pi.\n• disponível na tecnologia 24v.jpg"
+          image: "/galeria/porta_social_wind_200_ppa_kit.jpg"
         }
       ]
     },
