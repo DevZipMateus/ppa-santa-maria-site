@@ -12,60 +12,132 @@ const Products = () => {
       title: "Movimentadores Residenciais",
       description: "Automatizadores para portões residenciais monofásicos e Jet Flex",
       products: [
-        "DZ Rio PPA - Kit 3,0mt cremalheira",
-        "DZ Stark 600 PPA - Até 400kg",
-        "Pivotante PPA - Residencial",
-        "BV Home PPA - Kit 2 controles 433mhz"
+        {
+          name: "DZ Rio PPA - Kit 3,0mt cremalheira",
+          image: "/galeria/dz_rio_ppa_kit_3_0mt_de_cremalheira_linha_pop_residencial_ou_gold_2_controles_433mhz_aplicacao_resid.png"
+        },
+        {
+          name: "DZ Stark 600 PPA - Até 400kg",
+          image: "/galeria/dz_stark_600_ppa_kit_3_0mt_de_cremalheira_pop_residencial_2_controles_433mhz.%E2%80%A2%20aplicação:%20residências%E2%80%A2%20modelo:%20mono%E2%80%A2%20peso:%20até%20400kg.jpg"
+        },
+        {
+          name: "Pivotante PPA - Residencial",
+          image: "/galeria/pivotante_ppa_kit_2_controles_433mhz_aplicacao_residencias_condominios_de_medio_a_grande_porte_model.png"
+        },
+        {
+          name: "BV Home PPA - Kit 2 controles 433mhz",
+          image: "/galeria/bv_home_ppa_kit_2_controles_433mhz_e_2_suportes_de_instalacao_aplicacao_residencias_modelo_mono_ou_j.jpg"
+        }
       ]
     },
     {
       title: "Movimentadores Industriais", 
       description: "Equipamentos robustos para uso industrial e condomínios",
       products: [
-        "DZ Brutalle PPA - Modelo Jet Flex",
-        "DZ Industrial PPA - Até 1500kg",
-        "BV Condominium PPA - Kit 2 controles",
-        "BV Potenza PPA - Condominios"
+        {
+          name: "DZ Brutalle PPA - Modelo Jet Flex",
+          image: "/galeria/dz_brutalle_ppa_modelo_jet_flex_aplicacao_condominios_industrias_ou_comercios_em_geral_peso_varia_de.jpg"
+        },
+        {
+          name: "DZ Industrial PPA - Até 1500kg",
+          image: "/galeria/dz_industrial_ppa_modelo_mono_ou_jet_flex_aplicacao_residencias_comercios_industrias_ou_condominios_.200kg%E2%80%A2%20kit:%203,0mt%20de%20cremalheira%20gold%20industrial%20e%202%20controles%20433mhz.jpg"
+        },
+        {
+          name: "BV Condominium PPA - Kit 2 controles",
+          image: "/galeria/bv_condominium_ppa_kit_2_controles_433mhz_e_2_suportes_de_instalacao_aplicacao_condominios_de_medio_.jpg"
+        },
+        {
+          name: "BV Potenza PPA - Condominios",
+          image: "/galeria/bv_potenza_ppa_kit_2_controles_433mhz_e_2_suportes_de_instalacao_aplicacao_residencias_e_condominios.jpg"
+        }
       ]
     },
     {
       title: "Portas Automáticas",
       description: "Sistemas automatizados para portas sociais e comerciais", 
       products: [
-        "Porta Social Giro PPA - Vidro/Caixilho",
-        "Porta Social RAC Jet Flex",
-        "Porta Social Spin Jet Flex",
-        "Porta Social Wind 200 - 24v"
+        {
+          name: "Porta Social Giro PPA - Vidro/Caixilho",
+          image: "/galeria/porta_social_giro_ppa_aplicacao_vidro_ou_caixilho_modelo_para_portas_pivotantes_simples_ou_dupla_apl..jpg"
+        },
+        {
+          name: "Porta Social RAC Jet Flex",
+          image: "/galeria/porta_social_rac_jet_flex_ppa_aplicacao_portas_de_madeira_ferro_ou_aluminio_automatizador_para_porta..jpg"
+        },
+        {
+          name: "Porta Social Spin Jet Flex",
+          image: "/galeria/porta_social_spin_jet_flex_aplicacao_vidro_ou_caixilho_aplicacao_em_condominios_empresas_hospitais_o..jpg"
+        },
+        {
+          name: "Porta Social Wind 200 - 24v",
+          image: "/galeria/porta_social_wind_200_ppa_aplicacao_vidro_ou_caixilho_1_ou_2_folhas_moveis_cores_aluminio_natural_pi.%E2%80%A2%20disponível%20na%20tecnologia%2024v.jpg"
+        }
       ]
     },
     {
       title: "Cancelas Automáticas",
       description: "Controle de fluxo de veículos para estacionamentos",
       products: [
-        "Cancela BC1 PPA - Controle de fluxo",
-        "Cancela Automática PPA - Condominios",
-        "Porta de Enrolar BR1 - Comercial"
+        {
+          name: "Cancela BC1 PPA - Controle de fluxo",
+          image: "/galeria/cancela_automatica_bc1_ppa_a_melhor_opcao_para_controle_de_fluxo_de_veiculos_em_locais_e_horarios_na..jpg"
+        },
+        {
+          name: "Cancela Automática PPA - Condominios",
+          image: "/galeria/cancela_automatica_ppa_aplicacao_condominios_estacionamentos_shopping_e_pedagios_fluxo_baixo_medio_a.jpg"
+        },
+        {
+          name: "Porta de Enrolar BR1 - Comercial",
+          image: "/galeria/porta_de_enrolar_br1_fabricacao_nacional_proprio_para_estabelecimentos_comerciais_garagens_e_industr.jpg"
+        }
       ]
     },
     {
       title: "Centrais e Acessórios",
       description: "Centrais de comando e acessórios complementares",
       products: [
-        "Central Agility Pop Híbrida",
-        "Central Triflex Connect Brushless",
-        "Central Dupla PPA",
-        "Fotocelula F32 Plus",
-        "Controle ZAP 2 e 4 teclas"
+        {
+          name: "Central Agility Pop Híbrida",
+          image: "/galeria/central_agility_pop_hibrida_atua_no_sistema_analogico_ou_digital_aceita_controles_ppa_ou_universais.jpg"
+        },
+        {
+          name: "Central Triflex Connect Brushless",
+          image: "/galeria/central_triflex_connect_brushless_.jpg"
+        },
+        {
+          name: "Central Dupla PPA",
+          image: "/galeria/central_dupla_ppa.jpg"
+        },
+        {
+          name: "Fotocelula F32 Plus",
+          image: "/galeria/fotocelula_f32_plus.jpg"
+        },
+        {
+          name: "Controle ZAP 2 e 4 teclas",
+          image: "/galeria/zap_2_2_teclas_de_comando_independentes_frequencia_de_transmissao_433_92_mhz.png"
+        }
       ]
     },
     {
       title: "Segurança e Travas",
       description: "Dispositivos de segurança e travamento",
       products: [
-        "Trava Dog Steel Eletromagnética",
-        "Eletroímãs para Portas Pivotantes",
-        "Botoeira BT Steel - 1,2,4,6 botões",
-        "Sinaleira Lux - Visual e sonora"
+        {
+          name: "Trava Dog Steel Eletromagnética",
+          image: "/galeria/trava_dog_steel_trava_eletromagnetica_para_portoes_produzida_em_chapa_de_aco_carbono_com_pintura_ele..jpg"
+        },
+        {
+          name: "Eletroímãs para Portas Pivotantes",
+          image: "/galeria/eletroimas_portas_pivotantes_de_diversos_padroes_cores_e_pesos_variados..jpg"
+        },
+        {
+          name: "Botoeira BT Steel - 1,2,4,6 botões",
+          image: "/galeria/botoeira_bt_steel_acionador_de_abertura.%20um%20dispositivo%20de%20comando%20com%20a%20função%20de%20ligar%20e%20desligar%20a%20carga%20de%20um%20circuito,%20a%20partir%20de%20um%20acionamento%20manual,%20com%201,%202,%204%20e%206%20botões%E2%80%A2%20cores:%20preta,%20cinza,%20branca%20e%20inox.jpg"
+        },
+        {
+          name: "Sinaleira Lux - Visual e sonora",
+          image: "/galeria/sinaleira_lux_sinalizacao_visual_nas_cores_vermelho_e_amarelo_sinalizacao_sonora_buzzer_com_volume_e..png"
+        }
       ]
     }
   ];
@@ -109,15 +181,25 @@ const Products = () => {
                     <p className="text-muted-foreground mb-6 text-lg">
                       {category.description}
                     </p>
-                    <div className="grid md:grid-cols-2 gap-4">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                       {category.products.map((product, productIndex) => (
                         <div 
                           key={productIndex}
-                          className="bg-accent/30 rounded-lg p-4 border border-accent/20"
+                          className="bg-background rounded-lg border border-border shadow-sm overflow-hidden hover:shadow-md transition-shadow"
                         >
-                          <h3 className="font-semibold text-foreground">
-                            {product}
-                          </h3>
+                          <div className="aspect-video relative overflow-hidden bg-accent/10">
+                            <img 
+                              src={product.image} 
+                              alt={product.name}
+                              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                              loading="lazy"
+                            />
+                          </div>
+                          <div className="p-4">
+                            <h3 className="font-semibold text-foreground text-sm leading-tight">
+                              {product.name}
+                            </h3>
+                          </div>
                         </div>
                       ))}
                     </div>
