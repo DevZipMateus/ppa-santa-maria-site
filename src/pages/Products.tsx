@@ -13,6 +13,7 @@ interface CartItem {
   name: string;
   quantity: number;
   category: string;
+  image: string;
 }
 
 const Products = () => {
@@ -39,7 +40,7 @@ const Products = () => {
     setCart(prev => prev.filter(item => item.name !== productName));
   };
 
-  const addToCart = (productName: string, categoryTitle: string) => {
+  const addToCart = (productName: string, categoryTitle: string, productImage: string) => {
     const quantity = quantities[productName] || 1;
     setCart(prev => {
       const existingItem = prev.find(item => item.name === productName);
@@ -50,7 +51,7 @@ const Products = () => {
             : item
         );
       }
-      return [...prev, { name: productName, quantity, category: categoryTitle }];
+      return [...prev, { name: productName, quantity, category: categoryTitle, image: productImage }];
     });
     
     // Reset quantity selector
@@ -328,7 +329,18 @@ const Products = () => {
               
               <div className="space-y-4">
                 {cart.map((item, index) => (
-                  <div key={index} className="flex items-center justify-between p-4 border rounded-lg">
+                  <div key={index} className="flex items-center gap-4 p-4 border rounded-lg">
+                    <div className="w-16 h-16 bg-black rounded-lg overflow-hidden flex-shrink-0">
+                      <img 
+                        src={item.image} 
+                        alt={item.name}
+                        className="w-full h-full object-contain"
+                        onError={(e) => {
+                          e.currentTarget.src = '/placeholder.svg';
+                        }}
+                      />
+                    </div>
+                    
                     <div className="flex-1">
                       <h4 className="font-semibold text-sm">{item.name}</h4>
                       <p className="text-xs text-muted-foreground">{item.category}</p>
@@ -465,7 +477,7 @@ const Products = () => {
                             {/* Action Buttons */}
                             <div className="flex flex-col space-y-2">
                               <Button
-                                onClick={() => addToCart(product.name, category.title)}
+                                onClick={() => addToCart(product.name, category.title, product.image)}
                                 className="w-full"
                                 size="sm"
                               >
