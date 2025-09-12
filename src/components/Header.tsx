@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '@/assets/logo.jpg';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,12 +34,28 @@ const Header = () => {
   };
 
   const menuItems = [
-    { label: 'Início', id: 'home' },
-    { label: 'Sobre', id: 'about' },
-    { label: 'Serviços', id: 'services' },
-    { label: 'Marcas', id: 'brands' },
-    { label: 'Contato', id: 'contact' }
+    { label: 'Início', id: 'home', isRoute: false },
+    { label: 'Sobre', id: 'about', isRoute: false },
+    { label: 'Serviços', id: 'services', isRoute: false },
+    { label: 'Produtos', id: 'produtos', isRoute: true },
+    { label: 'Marcas', id: 'brands', isRoute: false },
+    { label: 'Contato', id: 'contact', isRoute: false }
   ];
+
+  const handleMenuClick = (item: any) => {
+    if (item.isRoute) {
+      setIsMenuOpen(false);
+      return;
+    }
+    
+    if (!isHomePage) {
+      // If not on home page, navigate to home first then scroll
+      window.location.href = `/#${item.id}`;
+      return;
+    }
+    
+    scrollToSection(item.id);
+  };
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -45,24 +64,34 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center space-x-3">
             <img 
               src={logo} 
               alt="Lopes Segurança Eletrônica" 
               className="h-12 w-auto"
             />
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {menuItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-foreground hover:text-primary transition-colors font-medium"
-              >
-                {item.label}
-              </button>
+              item.isRoute ? (
+                <Link
+                  key={item.id}
+                  to={`/${item.id}`}
+                  className="text-foreground hover:text-primary transition-colors font-medium"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <button
+                  key={item.id}
+                  onClick={() => handleMenuClick(item)}
+                  className="text-foreground hover:text-primary transition-colors font-medium"
+                >
+                  {item.label}
+                </button>
+              )
             ))}
           </nav>
 
@@ -92,13 +121,24 @@ const Header = () => {
           <nav className="md:hidden py-4 border-t border-border">
             <div className="flex flex-col space-y-4">
               {menuItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-left text-foreground hover:text-primary transition-colors font-medium py-2"
-                >
-                  {item.label}
-                </button>
+                item.isRoute ? (
+                  <Link
+                    key={item.id}
+                    to={`/${item.id}`}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="text-left text-foreground hover:text-primary transition-colors font-medium py-2"
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <button
+                    key={item.id}
+                    onClick={() => handleMenuClick(item)}
+                    className="text-left text-foreground hover:text-primary transition-colors font-medium py-2"
+                  >
+                    {item.label}
+                  </button>
+                )
               ))}
               <Button 
                 onClick={() => scrollToSection('contact')}
