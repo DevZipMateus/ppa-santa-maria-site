@@ -39,6 +39,7 @@ const Header = () => {
     { label: 'Serviços', id: 'services', isRoute: false },
     { label: 'Produtos', id: 'produtos', isRoute: true },
     { label: 'Marcas', id: 'brands', isRoute: false },
+    { label: 'Treinamentos', id: 'treinamento', isRoute: false },
     { label: 'Contato', id: 'contact', isRoute: false }
   ];
 
