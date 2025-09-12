@@ -1,9 +1,19 @@
 import { Shield, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import heroBg from '@/assets/hero-bg.png';
 
 const HeroSection = () => {
   return (
-    <section id="home" className="min-h-screen bg-gradient-hero flex items-center text-white">
+    <section 
+      id="home" 
+      className="min-h-screen flex items-center text-white relative"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${heroBg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
       <div className="container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-8">
