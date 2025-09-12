@@ -16,7 +16,7 @@ const HeroSection = () => {
     >
       <div className="container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-8">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8">
             <Shield className="h-16 w-16 mx-auto mb-6 text-white/90" />
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               Lopes Segurança Eletrônica
