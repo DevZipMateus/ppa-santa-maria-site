@@ -13,7 +13,7 @@ const Footer = () => {
             <img 
               src={logo} 
               alt="Lopes Segurança Eletrônica" 
-              className="h-16 w-auto mb-6 brightness-0 invert"
+              className="h-16 w-auto mb-6"
             />
             <p className="text-background/80 mb-6 max-w-md">
               Distribuidor autorizado PPA em Santa Maria desde 2014. Trazendo tecnologia com qualidade e segurança para sua residência ou empresa.
