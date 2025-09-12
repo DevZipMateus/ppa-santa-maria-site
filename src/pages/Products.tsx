@@ -18,7 +18,7 @@ const Products = () => {
         },
         {
           name: "DZ Stark 600 PPA - Até 400kg",
-          image: "/galeria/dz_stark_600_ppa_kit_3_0mt_de_cremalheira_pop_residencial_2_controles_433mhz.\n• aplicação: residências\n• modelo: mono\n• peso: até 400kg.jpg"
+          image: "/galeria/dz_stark_600_ppa_kit.jpg"
         },
         {
           name: "Pivotante PPA - Residencial",
