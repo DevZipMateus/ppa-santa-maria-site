@@ -191,7 +191,7 @@ const Products = () => {
                           key={productIndex}
                           className="bg-background rounded-lg border border-border shadow-sm overflow-hidden hover:shadow-md transition-shadow"
                         >
-                          <div className="aspect-square relative overflow-hidden bg-accent/10 p-4">
+                          <div className="aspect-square relative overflow-hidden bg-black p-4">
                             <img 
                               src={product.image} 
                               alt={product.name}
