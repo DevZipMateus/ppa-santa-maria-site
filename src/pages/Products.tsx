@@ -113,8 +113,12 @@ const Products = () => {
           image: "/galeria/fotocelula_f32_plus.jpg"
         },
         {
-          name: "Controle ZAP 2 e 4 teclas",
+          name: "Controle ZAP 2 teclas",
           image: "/galeria/zap_2_2_teclas_de_comando_independentes_frequencia_de_transmissao_433_92_mhz.png"
+        },
+        {
+          name: "Controle ZAP 4 teclas",
+          image: "/galeria/zap_4_4_teclas_de_comando_independentes_frequencia_de_transmissao_433_92_mhz.png"
         }
       ]
     },
