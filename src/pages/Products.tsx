@@ -27,6 +27,10 @@ const Products = () => {
         {
           name: "BV Home PPA - Kit 2 controles 433mhz",
           image: "/galeria/bv_home_ppa_kit_2_controles_433mhz_e_2_suportes_de_instalacao_aplicacao_residencias_modelo_mono_ou_j.jpg"
+        },
+        {
+          name: "BV Levante PPA - Residencial",
+          image: "/galeria/bv_levante_ppa_kit_2_controles_433mhz_e_2_suportes_de_instalacao_aplicacao_residencias_modelo_mono_o.jpg"
         }
       ]
     },
@@ -49,6 +53,22 @@ const Products = () => {
         {
           name: "BV Potenza PPA - Condominios",
           image: "/galeria/bv_potenza_ppa_kit_2_controles_433mhz_e_2_suportes_de_instalacao_aplicacao_residencias_e_condominios.jpg"
+        },
+        {
+          name: "BV Penta Predial PPA - Condominios",
+          image: "/galeria/bv_penta_predial_ppa_kit_2_controles_433mhz_e_2_suportes_de_instalacao_aplicacao_residencias_e_condo.jpg"
+        },
+        {
+          name: "BV BH Power Bolt PPA - Basculante",
+          image: "/galeria/bv_bh_power_bolt_ppa_kit_2_controles_433mhz_aplicacao_basculante_horizontal_para_portao_seccionado_e.jpg"
+        },
+        {
+          name: "Pivotante Liger 1000 PPA - Grande porte",
+          image: "/galeria/pivotante_liger_1000_ppa_kit_2_controles_433mhz_aplicacao_condominios_de_medio_a_grande_porte_modelo.jpg"
+        },
+        {
+          name: "DZ Portale Celtron - Kit completo",
+          image: "/galeria/dz_portale_celtron_kit_acompanha_2_controles_metragem_de_corrente_ou_cremalheira_conforme_necessidad.jpg"
         }
       ]
     },
@@ -71,6 +91,10 @@ const Products = () => {
         {
           name: "Porta Social Wind 200 - 24v",
           image: "/galeria/porta_social_wind_200_ppa_kit.jpg"
+        },
+        {
+          name: "Porta Social Tore PPA - Aluminio",
+          image: "/galeria/porta_social_tore_ppa_aplicacao_vidro_ou_caixilho_1_ou_2_folhas_moveis_cores_aluminio_natural_pintad..jpg"
         }
       ]
     },
@@ -109,8 +133,32 @@ const Products = () => {
           image: "/galeria/central_dupla_ppa.jpg"
         },
         {
+          name: "Central Triflex Full Range",
+          image: "/galeria/central_triflex_full_range.jpg"
+        },
+        {
+          name: "Central Laço Indutivo 1 ou 2 canais",
+          image: "/galeria/central_laco_indutivo_1_ou_2_canais.jpg"
+        },
+        {
           name: "Fotocelula F32 Plus",
           image: "/galeria/fotocelula_f32_plus.jpg"
+        },
+        {
+          name: "Fotocelula Refletiva F10 R",
+          image: "/galeria/fotocelula_refletiva_f10_r.jpg"
+        },
+        {
+          name: "Laço Indutivo",
+          image: "/galeria/laco_indutivo.jpg"
+        },
+        {
+          name: "Prog - Acessório de Programação",
+          image: "/galeria/prog_acessorio_de_programacao_das_centrais_de_comando_permite_a_programacao_dos_parametros_da_centra.png"
+        },
+        {
+          name: "Seletor de Funções",
+          image: "/galeria/seletor_de_funcoes_permite_a_programacao_total_da_porta_habilita_desabilita_radares_interno_e_extern.jpg"
         },
         {
           name: "Controle ZAP 2 teclas",
@@ -139,8 +187,20 @@ const Products = () => {
           image: "/galeria/botoeira_bt_steel_kit.jpg"
         },
         {
+          name: "Botoeira Inox No Touch",
+          image: "/galeria/botoeira_inox_no_touch.jpg"
+        },
+        {
           name: "Sinaleira Lux - Visual e sonora",
           image: "/galeria/sinaleira_lux_sinalizacao_visual_nas_cores_vermelho_e_amarelo_sinalizacao_sonora_buzzer_com_volume_e..png"
+        },
+        {
+          name: "Traver Uno - Acabamento diferenciado",
+          image: "/galeria/traver_uno_acabamento_diferenciado_disponivel_nas_cores_preta_branca_e_cinza_facil_instalacao_para_d.jpg"
+        },
+        {
+          name: "Mola Aérea - Portas e Portões",
+          image: "/galeria/mola_aerea_desenvolvida_para_uso_em_portas_portoes_de_madeira_ou_metal_pode_ser_instalada_tanto_em_p..jpg"
         }
       ]
     }
