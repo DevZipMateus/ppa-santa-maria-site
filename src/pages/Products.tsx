@@ -136,7 +136,7 @@ const Products = () => {
         },
         {
           name: "Botoeira BT Steel - 1,2,4,6 botões",
-          image: "/galeria/botoeira_bt_steel_acionador_de_abertura. um dispositivo de comando com a função de ligar e desligar a carga de um circuito, a partir de um acionamento manual, com 1, 2, 4 e 6 botões\n• cores: preta, cinza, branca e inox.jpg"
+          image: "/galeria/botoeira_bt_steel_kit.jpg"
         },
         {
           name: "Sinaleira Lux - Visual e sonora",
