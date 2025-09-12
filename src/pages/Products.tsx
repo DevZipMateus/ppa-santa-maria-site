@@ -1,12 +1,89 @@
-import { ArrowLeft, Phone, Mail } from 'lucide-react';
+import { ArrowLeft, Phone, Mail, ShoppingCart, Plus, Minus, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 
+interface CartItem {
+  name: string;
+  quantity: number;
+  category: string;
+}
+
 const Products = () => {
+  const [cart, setCart] = useState<CartItem[]>([]);
+  const [quantities, setQuantities] = useState<{ [key: string]: number }>({});
+
+  const updateQuantity = (productName: string, change: number) => {
+    setQuantities(prev => ({
+      ...prev,
+      [productName]: Math.max(1, (prev[productName] || 1) + change)
+    }));
+  };
+
+  const addToCart = (productName: string, categoryTitle: string) => {
+    const quantity = quantities[productName] || 1;
+    setCart(prev => {
+      const existingItem = prev.find(item => item.name === productName);
+      if (existingItem) {
+        return prev.map(item =>
+          item.name === productName
+            ? { ...item, quantity: item.quantity + quantity }
+            : item
+        );
+      }
+      return [...prev, { name: productName, quantity, category: categoryTitle }];
+    });
+    
+    // Reset quantity selector
+    setQuantities(prev => ({ ...prev, [productName]: 1 }));
+  };
+
+  const sendWhatsAppCart = () => {
+    if (cart.length === 0) return;
+    
+    let message = "🛒 *SOLICITAÇÃO DE ORÇAMENTO*\n\n";
+    
+    // Group by category
+    const groupedByCategory = cart.reduce((acc, item) => {
+      if (!acc[item.category]) {
+        acc[item.category] = [];
+      }
+      acc[item.category].push(item);
+      return acc;
+    }, {} as { [key: string]: CartItem[] });
+    
+    Object.entries(groupedByCategory).forEach(([category, items]) => {
+      message += `📋 *${category}*\n`;
+      items.forEach(item => {
+        message += `• ${item.name} - Qtd: ${item.quantity}\n`;
+      });
+      message += "\n";
+    });
+    
+    message += "💬 Gostaria de receber um orçamento para estes produtos.";
+    
+    const whatsappUrl = `https://wa.me/5555981079091?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
+  const requestQuote = (productName: string, categoryTitle: string) => {
+    const message = `🛒 *SOLICITAÇÃO DE ORÇAMENTO*\n\n📋 *${categoryTitle}*\n• ${productName}\n\n💬 Gostaria de receber informações e orçamento para este produto.`;
+    const whatsappUrl = `https://wa.me/5555981079091?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
+  const clearCart = () => {
+    setCart([]);
+  };
+
+  const getTotalItems = () => {
+    return cart.reduce((total, item) => total + item.quantity, 0);
+  };
   const productCategories = [
     {
       title: "Movimentadores Residenciais",
@@ -210,6 +287,20 @@ const Products = () => {
     <div className="min-h-screen">
       <Header />
       
+      {/* Cart Badge */}
+      {cart.length > 0 && (
+        <div className="fixed top-24 right-4 z-50">
+          <Button
+            onClick={sendWhatsAppCart}
+            className="bg-green-600 hover:bg-green-700 text-white rounded-full shadow-lg"
+            size="lg"
+          >
+            <ShoppingCart className="h-5 w-5 mr-2" />
+            Carrinho ({getTotalItems()})
+          </Button>
+        </div>
+      )}
+      
       <main className="pt-20">
         {/* Hero Section */}
         <section className="bg-gradient-primary py-16">
@@ -262,10 +353,54 @@ const Products = () => {
                               }}
                             />
                           </div>
-                          <div className="p-4">
+                          <div className="p-4 space-y-3">
                             <h3 className="font-semibold text-foreground text-sm leading-tight">
                               {product.name}
                             </h3>
+                            
+                            {/* Quantity Selector */}
+                            <div className="flex items-center justify-center space-x-2">
+                              <Button
+                                variant="outline"
+                                size="sm"
+                                onClick={() => updateQuantity(product.name, -1)}
+                                className="h-8 w-8 p-0"
+                              >
+                                <Minus className="h-3 w-3" />
+                              </Button>
+                              <span className="text-sm font-medium min-w-[2rem] text-center">
+                                {quantities[product.name] || 1}
+                              </span>
+                              <Button
+                                variant="outline"
+                                size="sm"
+                                onClick={() => updateQuantity(product.name, 1)}
+                                className="h-8 w-8 p-0"
+                              >
+                                <Plus className="h-3 w-3" />
+                              </Button>
+                            </div>
+                            
+                            {/* Action Buttons */}
+                            <div className="flex flex-col space-y-2">
+                              <Button
+                                onClick={() => addToCart(product.name, category.title)}
+                                className="w-full"
+                                size="sm"
+                              >
+                                <ShoppingCart className="h-4 w-4 mr-2" />
+                                Adicionar ao Carrinho
+                              </Button>
+                              <Button
+                                onClick={() => requestQuote(product.name, category.title)}
+                                variant="outline"
+                                className="w-full"
+                                size="sm"
+                              >
+                                <FileText className="h-4 w-4 mr-2" />
+                                Solicitar Orçamento
+                              </Button>
+                            </div>
                           </div>
                         </div>
                       ))}
