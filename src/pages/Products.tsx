@@ -40,7 +40,7 @@ const Products = () => {
         },
         {
           name: "DZ Industrial PPA - Até 1500kg",
-          image: "/galeria/dz_industrial_ppa_modelo_mono_ou_jet_flex_aplicacao_residencias_comercios_industrias_ou_condominios_.200kg\n• kit: 3,0mt de cremalheira gold industrial e 2 controles 433mhz.jpg"
+          image: "/galeria/dz_industrial_ppa_kit.jpg"
         },
         {
           name: "BV Condominium PPA - Kit 2 controles",
