@@ -741,6 +741,17 @@ const Products = () => {
             "Reduz o consumo de energia do equipamento quando estiver operando pela bateria",
             "Possui estabilizador para compensar variações na tensão da rede elétrica"
           ]
+        },
+        {
+          name: "No-break Volt Gate",
+          image: "/galeria/nobreak_volt_gate.jpg",
+          description: [
+            "No-break PPA de parede para automatizadores de portões",
+            "2 baterias de 12 V / 7 Ah",
+            "Mantém o funcionamento do automatizador quando houver falta de energia elétrica",
+            "Reduz o consumo de energia do equipamento quando estiver operando pela bateria",
+            "Possui estabilizador para compensar variações na tensão da rede elétrica"
+          ]
         }
       ]
     },
