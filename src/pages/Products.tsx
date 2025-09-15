@@ -662,6 +662,19 @@ const Products = () => {
             "MTE10 – Motor eletrônico de 10Nm, recomendado para cortinas médias",
             "MTE20 – Motor eletrônico de 20Nm, ideal para cortinas mais robustas"
           ]
+        },
+        {
+          name: "SS 400T",
+          image: "/galeria/ss_400t.jpg",
+          description: [
+            "Funciona como fonte para fechaduras eletromagnéticas",
+            "Saída 12V",
+            "Função No-Break",
+            "Corrente de saída: 3A",
+            "Acionamento por botão externo",
+            "Carregador flutuante de bateria",
+            "Tempo de acionamento ajustável de 0-60 segundos"
+          ]
         }
       ]
     },
