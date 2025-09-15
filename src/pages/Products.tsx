@@ -805,6 +805,14 @@ const Products = () => {
             "Desenvolvido para facilitar a instalação de automatizadores basculantes",
             "Permite ajustes e regulagens (haste e base com furos e rasgos)"
           ]
+        },
+        {
+          name: "Cremalheira Pop Preta",
+          image: "/galeria/cremalheira_pop_preta.jpg",
+          description: [
+            "Linha leve em cantoneira de aço",
+            "Metragem: 1,50MT cada barra"
+          ]
         }
       ]
     },
