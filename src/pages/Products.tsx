@@ -466,6 +466,19 @@ const Products = () => {
             "4 teclas de comando independentes",
             "Frequência de transmissão: 433,92 MHz"
           ]
+        },
+        {
+          name: "Módulo Contatto Wi-Fi",
+          image: "/galeria/modulo_contatto_wifi.jpg",
+          description: [
+            "Equipamento que torna um painel de alarme, cerca elétrica ou automatizador de portão comunicáveis com celular via Wi-Fi, tornando-os mais modernos e compatíveis com aplicativos para celulares Android e iOS",
+            "Receba notificações de status da sua central no seu celular via aplicativo (Android e iOS)",
+            "Acione sua central de alarme, portão ou cerca elétrica de qualquer lugar via aplicativo",
+            "Programável via aplicativo",
+            "1 Saída de relê",
+            "Funcionamento com a tecnologia Wi-Fi",
+            "Compatível com muitas centrais de alarme, automatizadores de portões e cercas elétricas do mercado nacional e internacional"
+          ]
         }
       ]
     },
