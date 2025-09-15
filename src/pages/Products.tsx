@@ -675,6 +675,16 @@ const Products = () => {
             "Carregador flutuante de bateria",
             "Tempo de acionamento ajustável de 0-60 segundos"
           ]
+        },
+        {
+          name: "Puxe-Empurre PPA",
+          image: "/galeria/puxe_empurre_ppa.jpg",
+          description: [
+            "Sinaliza abertura de portas e portões através dos leds, que indicam puxar e empurrar",
+            "Ideal para escritórios, consultórios e condomínios",
+            "Modelo de sobrepor com sinalização por leds",
+            "Alimentação 12 a 17 Vdc"
+          ]
         }
       ]
     },
