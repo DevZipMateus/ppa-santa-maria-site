@@ -19,7 +19,7 @@ const AboutSection = () => {
             <div>
               <h3 className="text-2xl font-semibold text-foreground mb-6 notranslate" translate="no">Nossa história</h3>
               <p className="text-muted-foreground mb-6 leading-relaxed notranslate" translate="no">
-                Buscamos trazer sempre produtos com diferenciais ao mercado, garantindo a satisfação e conforto em cada equipamento vendido. Nosso foco está em movimentadores de portões residenciais e para condomínios, portas automáticas, <span className="notranslate" translate="no">cancelas</span> automáticas e peças para reposição.
+                Buscamos trazer sempre produtos com diferenciais ao mercado, garantindo a satisfação e conforto em cada equipamento vendido. Nosso foco está em movimentadores de portões residenciais, para condomínios e industrias, portas automáticas, <span className="notranslate" translate="no">cancelas</span> automáticas e peças para reposição.
               </p>
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 Buscando ampliar o raio de atendimento, levamos nossos produtos por toda Santa Maria e região, dando suporte técnico e criando novos instaladores capacitados para o mercado.
