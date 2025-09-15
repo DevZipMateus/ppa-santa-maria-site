@@ -248,6 +248,16 @@ const Products = () => {
           ]
         },
         {
+          name: "Bv Torsion",
+          image: "/galeria/bv_torsion.jpg",
+          description: [
+            "Ideal para locais que não possuem espaço lateral para a instalação do trilho",
+            "O automatizador é instalado diretamente na folha do portão",
+            "Pode ser fixado em qualquer um dos lados do portão ou no centro",
+            "Peso: até 450kg"
+          ]
+        },
+        {
           name: "Pivotante Liger 1000 PPA - Grande porte",
           image: "/galeria/pivotante_liger_1000_ppa_kit_2_controles_433mhz_aplicacao_condominios_de_medio_a_grande_porte_modelo.jpg",
           description: [
