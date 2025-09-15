@@ -501,6 +501,19 @@ const Products = () => {
             "Led indicativo",
             "Contatos N.A e N.F"
           ]
+        },
+        {
+          name: "Botoeira Touch",
+          image: "/galeria/botoeira_touch.jpg",
+          description: [
+            "Touch capacitivo",
+            "Botoeira em PVC com fino acabamento",
+            "Alta durabilidade",
+            "Ideal para instalações de alto padrão",
+            "Contatos N.A e N.F",
+            "LED indicativo",
+            "Disponível nas cores branca e preta"
+          ]
         }
       ]
     },
