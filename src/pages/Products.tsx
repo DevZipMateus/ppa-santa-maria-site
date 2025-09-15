@@ -642,6 +642,16 @@ const Products = () => {
             "Acionamento por chave mecânica",
             "Funcionamento estável e silencioso"
           ]
+        },
+        {
+          name: "Motor Tubular Eletrônico",
+          image: "/galeria/motor_tubular_eletronico.jpg",
+          description: [
+            "Indicados para quem deseja mais conforto ao operar as cortinas sem a necessidade de instalação de chave mecânica",
+            "MTE6 – Motor eletrônico de 6Nm, para cortinas leves",
+            "MTE10 – Motor eletrônico de 10Nm, recomendado para cortinas médias",
+            "MTE20 – Motor eletrônico de 20Nm, ideal para cortinas mais robustas"
+          ]
         }
       ]
     },
