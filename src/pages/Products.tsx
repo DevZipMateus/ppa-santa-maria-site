@@ -787,6 +787,15 @@ const Products = () => {
           description: [
             "Realiza a interface com acessórios como trava eletromagnética, luz de garagem e sinaleira externa"
           ]
+        },
+        {
+          name: "Cremalheira Gold Nylon Natural",
+          image: "/galeria/cremalheira_gold_nylon_natural.jpg",
+          description: [
+            "Linha industrial em cantoneira de aço",
+            "Com nova fixação mais reforçada (parafuso sextavado)",
+            "Conexão entre gomos por encaixe"
+          ]
         }
       ]
     },
