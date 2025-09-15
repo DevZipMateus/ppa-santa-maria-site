@@ -796,6 +796,15 @@ const Products = () => {
             "Com nova fixação mais reforçada (parafuso sextavado)",
             "Conexão entre gomos por encaixe"
           ]
+        },
+        {
+          name: "Suporte de Fixação para Máquinas Basculantes",
+          image: "/galeria/suporte_fixacao_maquinas_basculantes.jpg",
+          description: [
+            "Fabricado em chapa de aço com tratamento de superfície",
+            "Desenvolvido para facilitar a instalação de automatizadores basculantes",
+            "Permite ajustes e regulagens (haste e base com furos e rasgos)"
+          ]
         }
       ]
     },
