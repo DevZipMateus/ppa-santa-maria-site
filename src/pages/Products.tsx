@@ -548,6 +548,17 @@ const Products = () => {
             "Largura da porta: 60 a 120 cm",
             "Ideal para locais de alto fluxo"
           ]
+        },
+        {
+          name: "Sensor Micro-Ondas SMI2",
+          image: "/galeria/sensor_micro_ondas_smi2.jpg",
+          description: [
+            "Micro-ondas + Infravermelho para desempenho superior",
+            "Detecta movimento ou presença com alta sensibilidade",
+            "Proteção contra impactos com cortina infravermelha",
+            "Altura máxima: 3 metros",
+            "Largura da cortina: 2 metros"
+          ]
         }
       ]
     },
