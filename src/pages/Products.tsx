@@ -620,6 +620,17 @@ const Products = () => {
             "Construída em liga de alumínio, resistente e durável",
             "Fácil instalação e uso intuitivo"
           ]
+        },
+        {
+          name: "Fechadura Digital FS810 Smart On",
+          image: "/galeria/fechadura_digital_fs810.jpg",
+          description: [
+            "Acesso por senha e biometria",
+            "Capacidade para 9 administradores e até 100 usuários",
+            "Alimentado por 4 pilhas alcalinas AA, com autonomia para 8.000 aberturas",
+            "Construído em liga de alumínio, resistente e durável",
+            "Fácil instalação e uso intuitivo"
+          ]
         }
       ]
     },
