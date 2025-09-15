@@ -780,6 +780,13 @@ const Products = () => {
             "Disponível em 433,92 MHz",
             "Até 164 transmissores (Código Rolante PPA) ou 328 transmissores (Código Fixo PPA)"
           ]
+        },
+        {
+          name: "Módulo Relé",
+          image: "/galeria/modulo_rele.jpg",
+          description: [
+            "Realiza a interface com acessórios como trava eletromagnética, luz de garagem e sinaleira externa"
+          ]
         }
       ]
     },
