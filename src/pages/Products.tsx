@@ -609,6 +609,17 @@ const Products = () => {
             "Operacional em temperaturas de -25°C a +70°C",
             "Instalação rápida e intuitiva"
           ]
+        },
+        {
+          name: "Fechadura Eletrônica FP110 com RFID e Senha",
+          image: "/galeria/fechadura_eletronica_fp110.jpg",
+          description: [
+            "Acesso por senha e cartão RFID",
+            "Capacidade para 9 administradores e até 100 usuários",
+            "Alimentação por 4 pilhas AA alcalinas, com autonomia para 8.000 aberturas",
+            "Construída em liga de alumínio, resistente e durável",
+            "Fácil instalação e uso intuitivo"
+          ]
         }
       ]
     },
