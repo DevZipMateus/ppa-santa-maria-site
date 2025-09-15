@@ -695,6 +695,17 @@ const Products = () => {
             "Corrente máxima: 10A",
             "Atenuação de modo comum e diferencial"
           ]
+        },
+        {
+          name: "Radar Selection",
+          image: "/galeria/radar_selection.jpg",
+          description: [
+            "Alimentação de 12 a 24Vdc",
+            "Saída NA e NF",
+            "Detecção unidirecional e Bidirecional (selecionável)",
+            "Alcance ajustado por trimpot",
+            "Altura de instalação até 3,5 metros"
+          ]
         }
       ]
     },
