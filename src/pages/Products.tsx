@@ -479,6 +479,16 @@ const Products = () => {
             "Funcionamento com a tecnologia Wi-Fi",
             "Compatível com muitas centrais de alarme, automatizadores de portões e cercas elétricas do mercado nacional e internacional"
           ]
+        },
+        {
+          name: "RFID",
+          image: "/galeria/rfid_cartoes.jpg",
+          description: [
+            "Frequência de trabalho: 125 Khz ou 13 Mhz",
+            "Cartão passivo não necessita bateria",
+            "É altamente confiável pois possui um código interno que é exclusivo para cada cartão",
+            "O cartão pode ser personalizado com foto do usuário e nome/logo da empresa"
+          ]
         }
       ]
     },
