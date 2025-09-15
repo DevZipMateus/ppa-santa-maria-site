@@ -514,6 +514,17 @@ const Products = () => {
             "LED indicativo",
             "Disponível nas cores branca e preta"
           ]
+        },
+        {
+          name: "Chaveiro RFID 125 KHz e 13MHz",
+          image: "/galeria/chaveiro_rfid.jpg",
+          description: [
+            "Ideal para utilização nas áreas de controle de acesso",
+            "Compatível com os principais leitores do mercado",
+            "Frequência de trabalho 125 Khz ou 13 Mhz",
+            "Visual moderno e compacto",
+            "Resistente à água"
+          ]
         }
       ]
     },
