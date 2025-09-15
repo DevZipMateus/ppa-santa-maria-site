@@ -580,6 +580,23 @@ const Products = () => {
             "Altura máxima de instalação: 3m",
             "Tecnologia: Micro-ondas 24,125 GHz"
           ]
+        },
+        {
+          name: "Triflex Connect Brushless PS",
+          image: "/galeria/triflex_connect_brushless_ps.jpg",
+          description: [
+            "Aplicada em portas automáticas",
+            "Central de comando bivolt (127V / 220V)",
+            "Controla os motores da PPA do tipo síncrono sem escova com imã permanente no rotor (BRUSHLESS)",
+            "Sistema de Fim de Curso Digital",
+            "Velocidade ajustável",
+            "Programação rápida e fácil via SELETOR DE FUNÇÕES",
+            "Supervisão de sistema antipânico",
+            "Saída para eletroimã ou sinalização de aberto / fechado",
+            "Entrada para Receptor de controle remoto",
+            "Entrada para fotocélula interna e externa",
+            "Entrada para dispositivo de controle de acesso"
+          ]
         }
       ]
     },
