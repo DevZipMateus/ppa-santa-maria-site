@@ -597,6 +597,18 @@ const Products = () => {
             "Entrada para fotocélula interna e externa",
             "Entrada para dispositivo de controle de acesso"
           ]
+        },
+        {
+          name: "Fechadura Eletrônica FP310 com biometria e Senha",
+          image: "/galeria/fechadura_eletronica_fp310.jpg",
+          description: [
+            "Acesso por biometria, senha e cartão RFID",
+            "Capacidade para 9 administradores e até 100 usuários",
+            "Construída em liga de alumínio na cor preta, resistente e moderna",
+            "Funciona com 4 pilhas AA alcalinas e autonomia para 8.000 aberturas",
+            "Operacional em temperaturas de -25°C a +70°C",
+            "Instalação rápida e intuitiva"
+          ]
         }
       ]
     },
