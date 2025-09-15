@@ -768,6 +768,18 @@ const Products = () => {
             "Alta estabilidade de frequência",
             "Código rolante PPA"
           ]
+        },
+        {
+          name: "Receptor Alcance",
+          image: "/galeria/receptor_alcance.jpg",
+          description: [
+            "Receptor para automatizadores de portas e portões automáticos PPA",
+            "Modo de retenção ou pulso por jumper",
+            "Fácil instalação",
+            "Memória para transmissores removível, criptografada",
+            "Disponível em 433,92 MHz",
+            "Até 164 transmissores (Código Rolante PPA) ou 328 transmissores (Código Fixo PPA)"
+          ]
         }
       ]
     },
