@@ -9,43 +9,53 @@ const ProductsShowcase = () => {
   const featuredProducts = [
     {
       name: "DZ Rio PPA - Kit 3,0mt cremalheira",
-      image: "/galeria/dz_rio_ppa_kit_3_0mt_de_cremalheira_linha_pop_residencial_ou_gold_2_controles_433mhz_aplicacao_resid.png"
+      image: "/galeria/dz_rio_ppa_kit_3_0mt_de_cremalheira_linha_pop_residencial_ou_gold_2_controles_433mhz_aplicacao_resid.png",
+      description: "Kit: 3,0MT de cremalheira (linha POP residencial ou Gold); 2 controles 433Mhz"
     },
     {
       name: "DZ Stark 600 PPA - Até 400kg",
-      image: "/galeria/dz_stark_600_ppa_kit.jpg"
+      image: "/galeria/dz_stark_600_ppa_kit.jpg",
+      description: "Kit: 3,0MT de cremalheira POP residencial; 2 controles 433mhz"
     },
     {
       name: "Central Agility Pop Híbrida",
-      image: "/galeria/central_agility_pop_hibrida_atua_no_sistema_analogico_ou_digital_aceita_controles_ppa_ou_universais.jpg"
+      image: "/galeria/central_agility_pop_hibrida_atua_no_sistema_analogico_ou_digital_aceita_controles_ppa_ou_universais.jpg",
+      description: "Atua no sistema analógico ou digital - Aceita controles PPA ou universais"
     },
     {
       name: "Porta Social Wind 200 - 24v",
-      image: "/galeria/porta_social_wind_200_ppa_kit.jpg"
+      image: "/galeria/porta_social_wind_200_ppa_kit.jpg", 
+      description: "Aplicação: vidro ou caixilho - Disponível na tecnologia 24V"
     },
     {
       name: "Cancela BC1 PPA - Controle de fluxo",
-      image: "/galeria/cancela_automatica_bc1_ppa_a_melhor_opcao_para_controle_de_fluxo_de_veiculos_em_locais_e_horarios_na..jpg"
+      image: "/galeria/cancela_automatica_bc1_ppa_a_melhor_opcao_para_controle_de_fluxo_de_veiculos_em_locais_e_horarios_na..jpg",
+      description: "A melhor opção para controle de fluxo de veículos - Tecnologia JetFlex"
     },
     {
       name: "BV Home PPA - Kit 2 controles 433mhz",
-      image: "/galeria/bv_home_ppa_kit_2_controles_433mhz_e_2_suportes_de_instalacao_aplicacao_residencias_modelo_mono_ou_j.jpg"
+      image: "/galeria/bv_home_ppa_kit_2_controles_433mhz_e_2_suportes_de_instalacao_aplicacao_residencias_modelo_mono_ou_j.jpg",
+      description: "Kit: 2 controles 433Mhz e 2 suportes - Sistema de funcionamento por fuso"
     },
     {
       name: "Botoeira BT Steel - 1,2,4,6 botões",
-      image: "/galeria/botoeira_bt_steel_kit.jpg"
+      image: "/galeria/botoeira_bt_steel_kit.jpg",
+      description: "Acionador de abertura com 1, 2, 4 e 6 botões - Cores: preta, cinza, branca e inox"
     },
     {
       name: "Pivotante Liger 1000 PPA - Grande porte",
-      image: "/galeria/pivotante_liger_1000_ppa_kit_2_controles_433mhz_aplicacao_condominios_de_medio_a_grande_porte_modelo.jpg"
+      image: "/galeria/pivotante_liger_1000_ppa_kit_2_controles_433mhz_aplicacao_condominios_de_medio_a_grande_porte_modelo.jpg",
+      description: "Kit: 2 controles 433Mhz - Aplicação: condomínios de médio a grande porte"
     },
     {
       name: "Fotocelula F32 Plus",
-      image: "/galeria/fotocelula_f32_plus.jpg"
+      image: "/galeria/fotocelula_f32_plus.jpg",
+      description: "Fotocélula para segurança de portões automáticos"
     },
     {
       name: "DZ Industrial PPA - Até 1500kg",
-      image: "/galeria/dz_industrial_ppa_kit.jpg"
+      image: "/galeria/dz_industrial_ppa_kit.jpg",
+      description: "Peso: modelos variam de 900kg até 2.200kg - Kit: 3,0MT de cremalheira Gold Industrial"
     }
   ];
 
@@ -99,11 +109,16 @@ const ProductsShowcase = () => {
                   }}
                 />
                 
-                {/* Overlay with product name */}
+                {/* Overlay with product name and description */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-3 sm:p-6">
-                  <h3 className="text-white text-base sm:text-xl lg:text-2xl font-semibold text-center sm:text-left">
-                    {featuredProducts[currentIndex].name}
-                  </h3>
+                  <div className="text-center sm:text-left">
+                    <h3 className="text-white text-base sm:text-xl lg:text-2xl font-semibold mb-1 notranslate" translate="no">
+                      {featuredProducts[currentIndex].name}
+                    </h3>
+                    <p className="text-white/80 text-xs sm:text-sm lg:text-base notranslate" translate="no">
+                      {featuredProducts[currentIndex].description}
+                    </p>
+                  </div>
                 </div>
               </div>
 

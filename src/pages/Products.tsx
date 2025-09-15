@@ -1,4 +1,4 @@
-import { ArrowLeft, Phone, Mail, ShoppingCart, Plus, Minus, FileText, X, Trash2 } from 'lucide-react';
+import { ArrowLeft, Phone, Mail, ShoppingCart, Plus, Minus, FileText, X, Trash2, ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -20,6 +20,7 @@ const Products = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [quantities, setQuantities] = useState<{ [key: string]: number }>({});
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [expandedProducts, setExpandedProducts] = useState<{ [key: string]: boolean }>({});
 
   const updateQuantity = (productName: string, change: number) => {
     setQuantities(prev => ({
@@ -103,6 +104,13 @@ const Products = () => {
   const getTotalItems = () => {
     return cart.reduce((total, item) => total + item.quantity, 0);
   };
+
+  const toggleProductDetails = (productName: string) => {
+    setExpandedProducts(prev => ({
+      ...prev,
+      [productName]: !prev[productName]
+    }));
+  };
   const productCategories = [
     {
       title: "Movimentadores Residenciais",
@@ -110,23 +118,59 @@ const Products = () => {
       products: [
         {
           name: "DZ Rio PPA - Kit 3,0mt cremalheira",
-          image: "/galeria/dz_rio_ppa_kit_3_0mt_de_cremalheira_linha_pop_residencial_ou_gold_2_controles_433mhz_aplicacao_resid.png"
+          image: "/galeria/dz_rio_ppa_kit_3_0mt_de_cremalheira_linha_pop_residencial_ou_gold_2_controles_433mhz_aplicacao_resid.png",
+          description: [
+            "Kit: 3,0MT de cremalheira (linha POP residencial ou Gold); 2 controles 433Mhz",
+            "Aplicação: residências ou pequenos estabelecimentos", 
+            "Modelo: Mono ou Jet Flex",
+            "Peso: 400kg, 500kg ou 700kg"
+          ]
         },
         {
           name: "DZ Stark 600 PPA - Até 400kg",
-          image: "/galeria/dz_stark_600_ppa_kit.jpg"
+          image: "/galeria/dz_stark_600_ppa_kit.jpg",
+          description: [
+            "Kit: 3,0MT de cremalheira POP residencial; 2 controles 433mhz",
+            "Aplicação: residências",
+            "Modelo: mono",
+            "Peso: até 400kg"
+          ]
         },
         {
           name: "Pivotante PPA - Residencial",
-          image: "/galeria/pivotante_ppa_kit_2_controles_433mhz_aplicacao_residencias_condominios_de_medio_a_grande_porte_model.png"
+          image: "/galeria/pivotante_ppa_kit_2_controles_433mhz_aplicacao_residencias_condominios_de_medio_a_grande_porte_model.png",
+          description: [
+            "Kit: 2 controles 433Mhz",
+            "Aplicação: residências, condomínios de médio a grande porte",
+            "Modelo: mono ou Jet Flex",
+            "Peso: 125kg até 380kg",
+            "Opções disponíveis: portão duplo ou simples (1 folha ou 2 folhas), sendo modelos home, SK, Predial ou Condominium"
+          ]
         },
         {
           name: "BV Home PPA - Kit 2 controles 433mhz",
-          image: "/galeria/bv_home_ppa_kit_2_controles_433mhz_e_2_suportes_de_instalacao_aplicacao_residencias_modelo_mono_ou_j.jpg"
+          image: "/galeria/bv_home_ppa_kit_2_controles_433mhz_e_2_suportes_de_instalacao_aplicacao_residencias_modelo_mono_ou_j.jpg",
+          description: [
+            "Kit: 2 controles 433Mhz e 2 suportes de instalação",
+            "Aplicação: residências",
+            "Modelo: mono ou Jet Flex",
+            "Peso: até 300kg",
+            "Sistema de funcionamento por fuso",
+            "Acionamento usado: de 1,40MT até 2,50MT"
+          ]
         },
         {
           name: "BV Levante PPA - Residencial",
-          image: "/galeria/bv_levante_ppa_kit_2_controles_433mhz_e_2_suportes_de_instalacao_aplicacao_residencias_modelo_mono_o.jpg"
+          image: "/galeria/bv_levante_ppa_kit_2_controles_433mhz_e_2_suportes_de_instalacao_aplicacao_residencias_modelo_mono_o.jpg",
+          description: [
+            "Kit: 2 controles 433Mhz e 2 suportes de instalação",
+            "Aplicação: residências",
+            "Modelo: mono ou Jet Flex",
+            "Peso: até 300kg",
+            "Sistema de funcionamento por fuso",
+            "Acionamento usado: de 1,40MT até 2,50MT",
+            "Modelo ventilado"
+          ]
         }
       ]
     },
@@ -136,35 +180,94 @@ const Products = () => {
       products: [
         {
           name: "DZ Brutalle PPA - Modelo Jet Flex",
-          image: "/galeria/dz_brutalle_ppa_modelo_jet_flex_aplicacao_condominios_industrias_ou_comercios_em_geral_peso_varia_de.jpg"
+          image: "/galeria/dz_brutalle_ppa_modelo_jet_flex_aplicacao_condominios_industrias_ou_comercios_em_geral_peso_varia_de.jpg",
+          description: [
+            "Modelo: Jet Flex",
+            "Aplicação: Condomínios, industrias ou comércios em geral",
+            "Peso: varia de 2000kg até 3000kg",
+            "Kit: 3,0MT de cremalheira Gold Industrial e 2 controles 433Mhz"
+          ]
         },
         {
           name: "DZ Industrial PPA - Até 1500kg",
-          image: "/galeria/dz_industrial_ppa_kit.jpg"
+          image: "/galeria/dz_industrial_ppa_kit.jpg",
+          description: [
+            "Modelo: mono ou Jet Flex",
+            "Aplicação: Residências, comércios, industrias ou condomínios",
+            "Peso: modelos variam de 900kg até 2.200kg",
+            "Kit: 3,0MT de cremalheira Gold Industrial e 2 controles 433Mhz"
+          ]
         },
         {
           name: "BV Condominium PPA - Kit 2 controles",
-          image: "/galeria/bv_condominium_ppa_kit_2_controles_433mhz_e_2_suportes_de_instalacao_aplicacao_condominios_de_medio_.jpg"
+          image: "/galeria/bv_condominium_ppa_kit_2_controles_433mhz_e_2_suportes_de_instalacao_aplicacao_condominios_de_medio_.jpg",
+          description: [
+            "Kit: 2 controles 433Mhz e 2 suportes de instalação",
+            "Aplicação: condomínios de médio à grande porte",
+            "Modelo: Jet Flex",
+            "Peso: até 500kg",
+            "Sistema de funcionamento por fuso",
+            "Acionamento usado: de 1,40MT até 4,0MT",
+            "Modelo ventilado"
+          ]
         },
         {
           name: "BV Potenza PPA - Condominios",
-          image: "/galeria/bv_potenza_ppa_kit_2_controles_433mhz_e_2_suportes_de_instalacao_aplicacao_residencias_e_condominios.jpg"
+          image: "/galeria/bv_potenza_ppa_kit_2_controles_433mhz_e_2_suportes_de_instalacao_aplicacao_residencias_e_condominios.jpg",
+          description: [
+            "Kit: 2 controles 433Mhz e 2 suportes de instalação",
+            "Aplicação: residências e condomínios de médio porte",
+            "Modelo: mono ou Jet Flex",
+            "Peso: até 400kg",
+            "Sistema de funcionamento por fuso",
+            "Acionamento usado: de 1,40MT até 4,0MT",
+            "Modelo ventilado"
+          ]
         },
         {
           name: "BV Penta Predial PPA - Condominios",
-          image: "/galeria/bv_penta_predial_ppa_kit_2_controles_433mhz_e_2_suportes_de_instalacao_aplicacao_residencias_e_condo.jpg"
+          image: "/galeria/bv_penta_predial_ppa_kit_2_controles_433mhz_e_2_suportes_de_instalacao_aplicacao_residencias_e_condo.jpg",
+          description: [
+            "Kit: 2 controles 433Mhz e 2 suportes de instalação",
+            "Aplicação: residências e condomínios de médio à grande porte",
+            "Modelo: mono ou Jet Flex",
+            "Peso: até 450kg",
+            "Sistema de funcionamento por fuso",
+            "Acionamento usado: de 1,40MT até 4,0MT",
+            "Modelo ventilado"
+          ]
         },
         {
           name: "BV BH Power Bolt PPA - Basculante",
-          image: "/galeria/bv_bh_power_bolt_ppa_kit_2_controles_433mhz_aplicacao_basculante_horizontal_para_portao_seccionado_e.jpg"
+          image: "/galeria/bv_bh_power_bolt_ppa_kit_2_controles_433mhz_aplicacao_basculante_horizontal_para_portao_seccionado_e.jpg",
+          description: [
+            "Kit: 2 controles 433Mhz",
+            "Aplicação: basculante horizontal para portão seccionado estilo americano",
+            "Acionamento de 2,95MT à 3,50MT",
+            "Peso: 450kg"
+          ]
         },
         {
           name: "Pivotante Liger 1000 PPA - Grande porte",
-          image: "/galeria/pivotante_liger_1000_ppa_kit_2_controles_433mhz_aplicacao_condominios_de_medio_a_grande_porte_modelo.jpg"
+          image: "/galeria/pivotante_liger_1000_ppa_kit_2_controles_433mhz_aplicacao_condominios_de_medio_a_grande_porte_modelo.jpg",
+          description: [
+            "Kit: 2 controles 433Mhz",
+            "Aplicação: condomínios de médio a grande porte",
+            "Modelo: mono",
+            "Peso: 300kg",
+            "Versão para locais em que não há espaço para instalação do modelo tradicional e que possui desnível no terreno"
+          ]
         },
         {
           name: "DZ Portale Celtron - Kit completo",
-          image: "/galeria/dz_portale_celtron_kit_acompanha_2_controles_metragem_de_corrente_ou_cremalheira_conforme_necessidad.jpg"
+          image: "/galeria/dz_portale_celtron_kit_acompanha_2_controles_metragem_de_corrente_ou_cremalheira_conforme_necessidad.jpg",
+          description: [
+            "Kit: acompanha 2 controles + metragem de corrente ou cremalheira (conforme necessidade do local)",
+            "Aplicação: residenciais e semi-industrial",
+            "Disponível com cremalheira ou corrente (metragem a definir)",
+            "Modelos: Mono ou Jet Flex",
+            "Peso: 400kg à 900kg"
+          ]
         }
       ]
     },
@@ -174,23 +277,56 @@ const Products = () => {
       products: [
         {
           name: "Porta Social Giro PPA - Vidro/Caixilho",
-          image: "/galeria/porta_social_giro_ppa_aplicacao_vidro_ou_caixilho_modelo_para_portas_pivotantes_simples_ou_dupla_apl..jpg"
+          image: "/galeria/porta_social_giro_ppa_aplicacao_vidro_ou_caixilho_modelo_para_portas_pivotantes_simples_ou_dupla_apl..jpg",
+          description: [
+            "Aplicação: vidro ou caixilho",
+            "Modelo para portas pivotantes, simples ou dupla",
+            "Aplicação em condomínios, empresas, hospitais ou residências"
+          ]
         },
         {
           name: "Porta Social RAC Jet Flex",
-          image: "/galeria/porta_social_rac_jet_flex_ppa_aplicacao_portas_de_madeira_ferro_ou_aluminio_automatizador_para_porta..jpg"
+          image: "/galeria/porta_social_rac_jet_flex_ppa_aplicacao_portas_de_madeira_ferro_ou_aluminio_automatizador_para_porta..jpg",
+          description: [
+            "Aplicação: portas de madeira, ferro ou alumínio",
+            "Automatizador para portas deslizantes com cremalheira",
+            "Solução mais econômica para automação, pois utiliza a porta já existente no local, evitando novos custos",
+            "Aplicação em condomínios, empresas ou residências"
+          ]
         },
         {
           name: "Porta Social Spin Jet Flex",
-          image: "/galeria/porta_social_spin_jet_flex_aplicacao_vidro_ou_caixilho_aplicacao_em_condominios_empresas_hospitais_o..jpg"
+          image: "/galeria/porta_social_spin_jet_flex_aplicacao_vidro_ou_caixilho_aplicacao_em_condominios_empresas_hospitais_o..jpg",
+          description: [
+            "Aplicação: vidro ou caixilho",
+            "Aplicação em condomínios, empresas, hospitais ou residências",
+            "Automatizador para portas sociais pivotantes compacto e de baixo custo",
+            "É fácil de instalar e vem com tecnologia Jetflex, que aumenta a velocidade de abertura",
+            "Se adapta em portas de alumínio, vidro, madeira e ferro"
+          ]
         },
         {
           name: "Porta Social Wind 200 - 24v",
-          image: "/galeria/porta_social_wind_200_ppa_kit.jpg"
+          image: "/galeria/porta_social_wind_200_ppa_kit.jpg",
+          description: [
+            "Aplicação: vidro ou caixilho",
+            "1 ou 2 folhas móveis",
+            "Cores: alumínio natural, pintado em alumínio, branco, preto ou demais cores à definir",
+            "Indicação: local de médio à alto fluxo",
+            "Sistema de acionamento conforme necessidade do local, podendo ser usado radares de movimento, botoeiras, controle remoto, entre outros",
+            "Disponível na tecnologia 24V"
+          ]
         },
         {
           name: "Porta Social Tore PPA - Aluminio",
-          image: "/galeria/porta_social_tore_ppa_aplicacao_vidro_ou_caixilho_1_ou_2_folhas_moveis_cores_aluminio_natural_pintad..jpg"
+          image: "/galeria/porta_social_tore_ppa_aplicacao_vidro_ou_caixilho_1_ou_2_folhas_moveis_cores_aluminio_natural_pintad..jpg",
+          description: [
+            "Aplicação: vidro ou caixilho",
+            "1 ou 2 folhas móveis",
+            "Cores: alumínio natural, pintado em alumínio, branco, preto ou demais cores à definir",
+            "Indicação: local de pequeno à médio fluxo",
+            "Sistema de acionamento conforme necessidade do local, podendo ser usado radares de movimento, botoeiras, controle remoto, entre outros"
+          ]
         }
       ]
     },
@@ -200,15 +336,38 @@ const Products = () => {
       products: [
         {
           name: "Cancela BC1 PPA - Controle de fluxo",
-          image: "/galeria/cancela_automatica_bc1_ppa_a_melhor_opcao_para_controle_de_fluxo_de_veiculos_em_locais_e_horarios_na..jpg"
+          image: "/galeria/cancela_automatica_bc1_ppa_a_melhor_opcao_para_controle_de_fluxo_de_veiculos_em_locais_e_horarios_na..jpg",
+          description: [
+            "A melhor opção para controle de fluxo de veículos em locais e horários não autorizados",
+            "Tecnologia JetFlex",
+            "Acionamento: transmissor, controle de acesso ou botoeiras",
+            "Possui comandos compatíveis com controles de acessos gerenciados e não gerenciados",
+            "Aplicação: estacionamentos de lojas, consultórios, clínicas e postos de combustível",
+            "Corrente usada: 9mm"
+          ]
         },
         {
           name: "Cancela Automática PPA - Condominios",
-          image: "/galeria/cancela_automatica_ppa_aplicacao_condominios_estacionamentos_shopping_e_pedagios_fluxo_baixo_medio_a.jpg"
+          image: "/galeria/cancela_automatica_ppa_aplicacao_condominios_estacionamentos_shopping_e_pedagios_fluxo_baixo_medio_a.jpg",
+          description: [
+            "Aplicação: condomínios, estacionamentos, shopping e pedágios",
+            "Fluxo: baixo, médio, alto ou intenso",
+            "Cores: amarela, laranja, branca, cinza weg ou grafite",
+            "Opção linear, para locais em que não há limitação de altura, ou articulada, para locais em que há um ponto de altura limitado",
+            "Modelos: K1, Brasso, Barrier ou Sem Parar",
+            "Tecnologia Jet Flex",
+            "Barreiras de 2,50MT até 6,0MT, na opção com ou sem LED de sinalização"
+          ]
         },
         {
           name: "Porta de Enrolar BR1 - Comercial",
-          image: "/galeria/porta_de_enrolar_br1_fabricacao_nacional_proprio_para_estabelecimentos_comerciais_garagens_e_industr.jpg"
+          image: "/galeria/porta_de_enrolar_br1_fabricacao_nacional_proprio_para_estabelecimentos_comerciais_garagens_e_industr.jpg",
+          description: [
+            "Fabricação nacional",
+            "Próprio para estabelecimentos comerciais, garagens e indústrias",
+            "Acionamento por botoeira e TX ZAP-BR1 com 4 comandos",
+            "Peças nacionais"
+          ]
         }
       ]
     },
@@ -218,51 +377,95 @@ const Products = () => {
       products: [
         {
           name: "Central Agility Pop Híbrida",
-          image: "/galeria/central_agility_pop_hibrida_atua_no_sistema_analogico_ou_digital_aceita_controles_ppa_ou_universais.jpg"
+          image: "/galeria/central_agility_pop_hibrida_atua_no_sistema_analogico_ou_digital_aceita_controles_ppa_ou_universais.jpg",
+          description: [
+            "Atua no sistema analógico ou digital",
+            "Aceita controles PPA ou universais"
+          ]
         },
         {
           name: "Central Triflex Connect Brushless",
-          image: "/galeria/central_triflex_connect_brushless_.jpg"
+          image: "/galeria/central_triflex_connect_brushless_.jpg",
+          description: [
+            "Central de comando moderna com tecnologia brushless"
+          ]
         },
         {
           name: "Central Dupla PPA",
-          image: "/galeria/central_dupla_ppa.jpg"
+          image: "/galeria/central_dupla_ppa.jpg",
+          description: [
+            "Central de comando para automação de portões"
+          ]
         },
         {
           name: "Central Triflex Full Range",
-          image: "/galeria/central_triflex_full_range.jpg"
+          image: "/galeria/central_triflex_full_range.jpg",
+          description: [
+            "Central de comando completa para automação"
+          ]
         },
         {
           name: "Central Laço Indutivo 1 ou 2 canais",
-          image: "/galeria/central_laco_indutivo_1_ou_2_canais.jpg"
+          image: "/galeria/central_laco_indutivo_1_ou_2_canais.jpg",
+          description: [
+            "1 ou 2 canais"
+          ]
         },
         {
           name: "Fotocelula F32 Plus",
-          image: "/galeria/fotocelula_f32_plus.jpg"
+          image: "/galeria/fotocelula_f32_plus.jpg",
+          description: [
+            "Fotocélula para segurança de portões"
+          ]
         },
         {
           name: "Fotocelula Refletiva F10 R",
-          image: "/galeria/fotocelula_refletiva_f10_r.jpg"
+          image: "/galeria/fotocelula_refletiva_f10_r.jpg",
+          description: [
+            "Fotocélula refletiva para segurança"
+          ]
         },
         {
           name: "Laço Indutivo",
-          image: "/galeria/laco_indutivo.jpg"
+          image: "/galeria/laco_indutivo.jpg",
+          description: [
+            "Sistema de detecção por laço indutivo"
+          ]
         },
         {
           name: "Prog - Acessório de Programação",
-          image: "/galeria/prog_acessorio_de_programacao_das_centrais_de_comando_permite_a_programacao_dos_parametros_da_centra.png"
+          image: "/galeria/prog_acessorio_de_programacao_das_centrais_de_comando_permite_a_programacao_dos_parametros_da_centra.png",
+          description: [
+            "Acessório de programação das centrais de comando",
+            "Permite a programação dos parâmetros da central",
+            "Permite visualização do número de ciclos do portão, de falhas e status dos sensores"
+          ]
         },
         {
           name: "Seletor de Funções",
-          image: "/galeria/seletor_de_funcoes_permite_a_programacao_total_da_porta_habilita_desabilita_radares_interno_e_extern.jpg"
+          image: "/galeria/seletor_de_funcoes_permite_a_programacao_total_da_porta_habilita_desabilita_radares_interno_e_extern.jpg",
+          description: [
+            "Permite a programação total da porta",
+            "Habilita/Desabilita radares interno e externo de forma independente",
+            "Função para manter porta aberta",
+            "Permite visualização do número de ciclos da porta, de falhas e status dos sensores"
+          ]
         },
         {
           name: "Controle ZAP 2 teclas",
-          image: "/galeria/zap_2_2_teclas_de_comando_independentes_frequencia_de_transmissao_433_92_mhz.png"
+          image: "/galeria/zap_2_2_teclas_de_comando_independentes_frequencia_de_transmissao_433_92_mhz.png",
+          description: [
+            "2 teclas de comando independentes",
+            "Frequência de transmissão: 433,92 MHz"
+          ]
         },
         {
           name: "Controle ZAP 4 teclas",
-          image: "/galeria/zap_4_4_teclas_de_comando_independentes_frequencia_de_transmissao_433_92_mhz.png"
+          image: "/galeria/zap_4_4_teclas_de_comando_independentes_frequencia_de_transmissao_433_92_mhz.png",
+          description: [
+            "4 teclas de comando independentes",
+            "Frequência de transmissão: 433,92 MHz"
+          ]
         }
       ]
     },
@@ -272,31 +475,67 @@ const Products = () => {
       products: [
         {
           name: "Trava Dog Steel Eletromagnética",
-          image: "/galeria/trava_dog_steel_trava_eletromagnetica_para_portoes_produzida_em_chapa_de_aco_carbono_com_pintura_ele..jpg"
+          image: "/galeria/trava_dog_steel_trava_eletromagnetica_para_portoes_produzida_em_chapa_de_aco_carbono_com_pintura_ele..jpg",
+          description: [
+            "Trava eletromagnética para portões",
+            "Produzida em chapa de aço carbono com pintura eletrostática",
+            "Pino em aço carbono maciço",
+            "Base em chapa de aço",
+            "Rampa em aço antiviolação",
+            "Compatível com portões basculantes, deslizantes e pivotantes",
+            "Cores variadas"
+          ]
         },
         {
           name: "Eletroímãs para Portas Pivotantes",
-          image: "/galeria/eletroimas_portas_pivotantes_de_diversos_padroes_cores_e_pesos_variados..jpg"
+          image: "/galeria/eletroimas_portas_pivotantes_de_diversos_padroes_cores_e_pesos_variados..jpg",
+          description: [
+            "Portas pivotantes de diversos padrões",
+            "Cores e pesos variados"
+          ]
         },
         {
           name: "Botoeira BT Steel - 1,2,4,6 botões",
-          image: "/galeria/botoeira_bt_steel_kit.jpg"
+          image: "/galeria/botoeira_bt_steel_kit.jpg",
+          description: [
+            "Acionador de abertura. Um dispositivo de comando com a função de ligar e desligar a carga de um circuito, a partir de um acionamento manual, com 1, 2, 4 e 6 botões",
+            "Cores: preta, cinza, branca e inox"
+          ]
         },
         {
           name: "Botoeira Inox No Touch",
-          image: "/galeria/botoeira_inox_no_touch.jpg"
+          image: "/galeria/botoeira_inox_no_touch.jpg",
+          description: [
+            "Botoeira em inox com tecnologia no touch"
+          ]
         },
         {
           name: "Sinaleira Lux - Visual e sonora",
-          image: "/galeria/sinaleira_lux_sinalizacao_visual_nas_cores_vermelho_e_amarelo_sinalizacao_sonora_buzzer_com_volume_e..png"
+          image: "/galeria/sinaleira_lux_sinalizacao_visual_nas_cores_vermelho_e_amarelo_sinalizacao_sonora_buzzer_com_volume_e..png",
+          description: [
+            "Sinalização visual nas cores vermelho e amarelo",
+            "Sinalização sonora (Buzzer) com volume e frequência ajustáveis",
+            "Sensor de identificação dia / noite",
+            "Disponível nas cores preta e branca"
+          ]
         },
         {
           name: "Traver Uno - Acabamento diferenciado",
-          image: "/galeria/traver_uno_acabamento_diferenciado_disponivel_nas_cores_preta_branca_e_cinza_facil_instalacao_para_d.jpg"
+          image: "/galeria/traver_uno_acabamento_diferenciado_disponivel_nas_cores_preta_branca_e_cinza_facil_instalacao_para_d.jpg",
+          description: [
+            "Acabamento diferenciado disponível nas cores preta, branca e cinza",
+            "Fácil instalação para diversos tipos de portas e portões"
+          ]
         },
         {
           name: "Mola Aérea - Portas e Portões",
-          image: "/galeria/mola_aerea_desenvolvida_para_uso_em_portas_portoes_de_madeira_ou_metal_pode_ser_instalada_tanto_em_p..jpg"
+          image: "/galeria/mola_aerea_desenvolvida_para_uso_em_portas_portoes_de_madeira_ou_metal_pode_ser_instalada_tanto_em_p..jpg",
+          description: [
+            "Desenvolvida para uso em portas/portões de madeira ou metal",
+            "Pode ser instalada tanto em portas com abertura direita ou esquerda",
+            "Velocidade ajustável",
+            "Disponível nas cores: preta, branca e prata"
+          ]
         }
       ]
     }
@@ -450,6 +689,35 @@ const Products = () => {
                             <h3 className="font-semibold text-foreground text-xs sm:text-sm leading-tight notranslate" translate="no">
                               {product.name}
                             </h3>
+                            
+                            {/* Product Description Toggle */}
+                            {product.description && (
+                              <div className="space-y-2">
+                                <Button
+                                  variant="ghost"
+                                  size="sm"
+                                  onClick={() => toggleProductDetails(product.name)}
+                                  className="w-full p-0 h-auto font-normal text-xs justify-between"
+                                >
+                                  <span>Ver Especificações</span>
+                                  {expandedProducts[product.name] ? 
+                                    <ChevronUp className="h-3 w-3" /> : 
+                                    <ChevronDown className="h-3 w-3" />
+                                  }
+                                </Button>
+                                
+                                {expandedProducts[product.name] && (
+                                  <div className="bg-muted/30 rounded-lg p-3 space-y-1 notranslate" translate="no">
+                                    {product.description.map((desc, descIndex) => (
+                                      <div key={descIndex} className="text-xs text-muted-foreground flex items-start">
+                                        <span className="text-primary mr-2 font-bold">•</span>
+                                        <span>{desc}</span>
+                                      </div>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
+                            )}
                             
                             {/* Quantity Selector */}
                             <div className="flex items-center justify-center space-x-2">
