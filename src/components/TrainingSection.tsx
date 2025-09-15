@@ -4,17 +4,12 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Calendar, Award, Clock, Users, CheckCircle2 } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
 
 const TrainingSection = () => {
-  const { toast } = useToast();
   const [formData, setFormData] = useState({
     nome: '',
     email: '',
-    telefone: '',
     empresa: '',
-    treinamento: '',
-    data_preferencial: '',
     observacoes: ''
   });
 
@@ -25,31 +20,27 @@ const TrainingSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Solicitação enviada!",
-      description: "Entraremos em contato para confirmar o agendamento do treinamento.",
-    });
+    
+    // Create WhatsApp message with form data
+    const message = `*Solicitação de Treinamento*
+    
+*Nome:* ${formData.nome}
+*Email:* ${formData.email}
+*Empresa:* ${formData.empresa || 'Não informado'}
+*Observações:* ${formData.observacoes || 'Nenhuma observação'}`;
+
+    const whatsappUrl = `https://wa.me/5555981079091?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    
+    // Reset form
     setFormData({
       nome: '',
       email: '',
-      telefone: '',
       empresa: '',
-      treinamento: '',
-      data_preferencial: '',
       observacoes: ''
     });
   };
 
-  const treinamentos = [
-    'Instalação de Portões Automáticos',
-    'Manutenção Preventiva',
-    'Programação de Centrais',
-    'Sistemas de Controle de Acesso',
-    'Cancelas Automáticas',
-    'Interfones e Videoporteiros',
-    'Cercas Elétricas',
-    'Câmeras de Segurança'
-  ];
 
   return (
     <section id="treinamento" className="py-20 bg-gradient-subtle" translate="no">
@@ -144,99 +135,45 @@ const TrainingSection = () => {
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="nome" className="block text-sm font-medium mb-2 notranslate" translate="no">
-                      Nome Completo *
-                    </label>
-                    <Input
-                      id="nome"
-                      name="nome"
-                      value={formData.nome}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full"
-                      translate="no"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="telefone" className="block text-sm font-medium mb-2 notranslate" translate="no">
-                      Telefone *
-                    </label>
-                    <Input
-                      id="telefone"
-                      name="telefone"
-                      value={formData.telefone}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full"
-                      translate="no"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2 notranslate" translate="no">
-                      E-mail *
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full"
-                      translate="no"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="empresa" className="block text-sm font-medium mb-2 notranslate" translate="no">
-                      Empresa
-                    </label>
-                    <Input
-                      id="empresa"
-                      name="empresa"
-                      value={formData.empresa}
-                      onChange={handleInputChange}
-                      className="w-full"
-                      translate="no"
-                    />
-                  </div>
-                </div>
-
                 <div>
-                  <label htmlFor="treinamento" className="block text-sm font-medium mb-2 notranslate" translate="no">
-                    Tipo de Treinamento *
-                  </label>
-                  <select
-                    id="treinamento"
-                    name="treinamento"
-                    value={formData.treinamento}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent notranslate"
-                    translate="no"
-                  >
-                    <option value="">Selecione o treinamento</option>
-                    {treinamentos.map((tipo, index) => (
-                      <option key={index} value={tipo} className="notranslate" translate="no">
-                        {tipo}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="data_preferencial" className="block text-sm font-medium mb-2 notranslate" translate="no">
-                    Data Preferencial
+                  <label htmlFor="nome" className="block text-sm font-medium mb-2 notranslate" translate="no">
+                    Nome Completo *
                   </label>
                   <Input
-                    id="data_preferencial"
-                    name="data_preferencial"
-                    type="date"
-                    value={formData.data_preferencial}
+                    id="nome"
+                    name="nome"
+                    value={formData.nome}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full"
+                    translate="no"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium mb-2 notranslate" translate="no">
+                    E-mail *
+                  </label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full"
+                    translate="no"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="empresa" className="block text-sm font-medium mb-2 notranslate" translate="no">
+                    Empresa
+                  </label>
+                  <Input
+                    id="empresa"
+                    name="empresa"
+                    value={formData.empresa}
                     onChange={handleInputChange}
                     className="w-full"
                     translate="no"
