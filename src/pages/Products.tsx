@@ -752,6 +752,22 @@ const Products = () => {
             "Reduz o consumo de energia do equipamento quando estiver operando pela bateria",
             "Possui estabilizador para compensar variações na tensão da rede elétrica"
           ]
+        },
+        {
+          name: "Good Light Plus",
+          image: "/galeria/good_light_plus.jpg",
+          description: [
+            "Controle veicular para carros, motos e caminhões",
+            "Circuito eletrônico isolado do veículo",
+            "Chave tact para gravação do transmissor na central",
+            "Fios de conexão sem polaridade, podendo ser instalado sem preocupação com inversão de polaridade",
+            "Nova tecnologia com melhor transmissão de dados devido à potência do sinal RF e confiabilidade",
+            "Frequência de transmissão em 433,92 MHz",
+            "Potência de transmissão de aproximadamente 10 dBm",
+            "Resistente a umidade",
+            "Alta estabilidade de frequência",
+            "Código rolante PPA"
+          ]
         }
       ]
     },
