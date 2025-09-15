@@ -730,6 +730,17 @@ const Products = () => {
             "Mais conforto e segurança",
             "Versão 800VA - Potência Nominal de Pico (500W) (800VA)"
           ]
+        },
+        {
+          name: "No-break Volt Gate Ind",
+          image: "/galeria/nobreak_volt_gate_ind.jpg",
+          description: [
+            "No-break PPA de parede para automatizadores de portões industriais",
+            "1 bateria de 12 V / 45 Ah",
+            "Mantém o funcionamento do automatizador quando houver falta de energia elétrica",
+            "Reduz o consumo de energia do equipamento quando estiver operando pela bateria",
+            "Possui estabilizador para compensar variações na tensão da rede elétrica"
+          ]
         }
       ]
     },
