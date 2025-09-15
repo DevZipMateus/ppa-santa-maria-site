@@ -706,6 +706,18 @@ const Products = () => {
             "Alcance ajustado por trimpot",
             "Altura de instalação até 3,5 metros"
           ]
+        },
+        {
+          name: "Volt Gate Ind Senoidal",
+          image: "/galeria/volt_gate_ind_senoidal.jpg",
+          description: [
+            "Nobreak para automatizadores com melhor autonomia e performance para manter o funcionamento de motores",
+            "Controle por inversor de frequência em forma de onda senoidal quando opera por baterias",
+            "Proporciona maior número de ciclos de abertura e fechamento do portão",
+            "Desenvolvido para manter os equipamentos em funcionamento quando há quedas de tensão",
+            "Acompanha os cabos de bateria e trabalha em 24V utilizando 2 baterias de 12V em série",
+            "Versão 1600VA - Potência Nominal de Pico (1000W) (1600VA)"
+          ]
         }
       ]
     },
