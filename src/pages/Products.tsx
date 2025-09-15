@@ -631,6 +631,17 @@ const Products = () => {
             "Construído em liga de alumínio, resistente e durável",
             "Fácil instalação e uso intuitivo"
           ]
+        },
+        {
+          name: "Motor Tubular Mecânico",
+          image: "/galeria/motor_tubular_mecanico.jpg",
+          description: [
+            "Ideais para quem busca uma solução robusta e eficiente para a automação de cortinas",
+            "Versões disponíveis de 6Nm, 10Nm e 20Nm",
+            "Compatíveis com diferentes diâmetros de tubo",
+            "Acionamento por chave mecânica",
+            "Funcionamento estável e silencioso"
+          ]
         }
       ]
     },
