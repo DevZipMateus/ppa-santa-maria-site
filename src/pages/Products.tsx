@@ -570,6 +570,16 @@ const Products = () => {
             "Altura máxima: 2,5 metros",
             "Largura da cortina: 4 metros"
           ]
+        },
+        {
+          name: "Sensor Micro-Ondas SMW3",
+          image: "/galeria/sensor_micro_ondas_smw3.jpg",
+          description: [
+            "Alimentação: 12-24V (AC/DC)",
+            "Ajuste de sensibilidade",
+            "Altura máxima de instalação: 3m",
+            "Tecnologia: Micro-ondas 24,125 GHz"
+          ]
         }
       ]
     },
