@@ -489,6 +489,18 @@ const Products = () => {
             "É altamente confiável pois possui um código interno que é exclusivo para cada cartão",
             "O cartão pode ser personalizado com foto do usuário e nome/logo da empresa"
           ]
+        },
+        {
+          name: "Botoeira Inox Smart N.A e N.F",
+          image: "/galeria/botoeira_inox_smart.jpg",
+          description: [
+            "Botoeira com fino acabamento",
+            "Alta durabilidade",
+            "Ideal para instalações de alto padrão",
+            "Botoeira em aço inoxidável",
+            "Led indicativo",
+            "Contatos N.A e N.F"
+          ]
         }
       ]
     },
