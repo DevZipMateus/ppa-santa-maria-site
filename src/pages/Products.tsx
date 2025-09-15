@@ -535,6 +535,19 @@ const Products = () => {
             "Código interno exclusivo",
             "Distância de leitura até 4 m"
           ]
+        },
+        {
+          name: "Mola Aérea AS34",
+          image: "/galeria/mola_aerea_as34.jpg",
+          description: [
+            "Mola hidráulica aérea projetada para aplicação em portas e portões de madeira ou metal",
+            "Pode ser utilizada em aberturas tanto à direita quanto à esquerda",
+            "Peso da porta: 40 a 65 Kg",
+            "Velocidade ajustável",
+            "Acabamentos: branco, preto e cinza",
+            "Largura da porta: 60 a 120 cm",
+            "Ideal para locais de alto fluxo"
+          ]
         }
       ]
     },
