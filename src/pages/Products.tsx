@@ -559,6 +559,17 @@ const Products = () => {
             "Altura máxima: 3 metros",
             "Largura da cortina: 2 metros"
           ]
+        },
+        {
+          name: "Sensor Micro-Ondas SMI4",
+          image: "/galeria/sensor_micro_ondas_smi4.jpg",
+          description: [
+            "Micro-ondas + Infravermelho para máxima proteção",
+            "Detecta movimento ou presença com precisão",
+            "Proteção contra impactos com cortina infravermelha",
+            "Altura máxima: 2,5 metros",
+            "Largura da cortina: 4 metros"
+          ]
         }
       ]
     },
