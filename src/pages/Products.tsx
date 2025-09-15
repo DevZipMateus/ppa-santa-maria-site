@@ -525,6 +525,16 @@ const Products = () => {
             "Visual moderno e compacto",
             "Resistente à água"
           ]
+        },
+        {
+          name: "Tag RFID 900 MHz",
+          image: "/galeria/tag_rfid_900mhz.jpg",
+          description: [
+            "Frequência 900 Mhz",
+            "Memória 512 bits",
+            "Código interno exclusivo",
+            "Distância de leitura até 4 m"
+          ]
         }
       ]
     },
