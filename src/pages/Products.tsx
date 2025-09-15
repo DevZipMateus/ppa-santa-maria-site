@@ -685,6 +685,16 @@ const Products = () => {
             "Modelo de sobrepor com sinalização por leds",
             "Alimentação 12 a 17 Vdc"
           ]
+        },
+        {
+          name: "Módulo PRF (com filtro)",
+          image: "/galeria/modulo_prf_filtro.jpg",
+          description: [
+            "Protetor contra surtos elétricos e filtro de interferência eletromagnética",
+            "Tensão nominal de trabalho: 127V ou 220V (definida na aquisição)",
+            "Corrente máxima: 10A",
+            "Atenuação de modo comum e diferencial"
+          ]
         }
       ]
     },
