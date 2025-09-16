@@ -5,7 +5,6 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Calendar, Award, Clock, Users, CheckCircle2 } from 'lucide-react';
-
 const TrainingSection = () => {
   const [formData, setFormData] = useState({
     nome: '',
@@ -14,15 +13,19 @@ const TrainingSection = () => {
     tipoTreinamento: '',
     observacoes: ''
   });
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    const {
+      name,
+      value
+    } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Create WhatsApp message with form data
     const message = `*Solicitação de Treinamento*
     
@@ -31,10 +34,9 @@ const TrainingSection = () => {
 *Empresa:* ${formData.empresa || 'Não informado'}
 *Tipo de Treinamento:* ${formData.tipoTreinamento}
 *Observações:* ${formData.observacoes || 'Nenhuma observação'}`;
-
     const whatsappUrl = `https://wa.me/5555981079091?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-    
+
     // Reset form
     setFormData({
       nome: '',
@@ -44,10 +46,7 @@ const TrainingSection = () => {
       observacoes: ''
     });
   };
-
-
-  return (
-    <section id="treinamento" className="py-20 bg-gradient-subtle" translate="no">
+  return <section id="treinamento" className="py-20 bg-gradient-subtle" translate="no">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-4 notranslate" translate="no">
@@ -106,7 +105,7 @@ const TrainingSection = () => {
               <Card className="text-center bg-background/30 backdrop-blur-sm border-border/50">
                 <CardContent className="pt-6">
                   <Clock className="h-8 w-8 text-primary mx-auto mb-3" />
-                  <h4 className="font-semibold notranslate" translate="no">8-16h</h4>
+                  <h4 className="font-semibold notranslate" translate="no">3-14h</h4>
                   <p className="text-sm text-muted-foreground notranslate" translate="no">Duração</p>
                 </CardContent>
               </Card>
@@ -143,52 +142,31 @@ const TrainingSection = () => {
                   <label htmlFor="nome" className="block text-sm font-medium mb-2 notranslate" translate="no">
                     Nome Completo *
                   </label>
-                  <Input
-                    id="nome"
-                    name="nome"
-                    value={formData.nome}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full"
-                    translate="no"
-                  />
+                  <Input id="nome" name="nome" value={formData.nome} onChange={handleInputChange} required className="w-full" translate="no" />
                 </div>
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium mb-2 notranslate" translate="no">
                     E-mail *
                   </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full"
-                    translate="no"
-                  />
+                  <Input id="email" name="email" type="email" value={formData.email} onChange={handleInputChange} required className="w-full" translate="no" />
                 </div>
 
                 <div>
                   <label htmlFor="empresa" className="block text-sm font-medium mb-2 notranslate" translate="no">
                     Empresa
                   </label>
-                  <Input
-                    id="empresa"
-                    name="empresa"
-                    value={formData.empresa}
-                    onChange={handleInputChange}
-                    className="w-full"
-                    translate="no"
-                  />
+                  <Input id="empresa" name="empresa" value={formData.empresa} onChange={handleInputChange} className="w-full" translate="no" />
                 </div>
 
                 <div>
                   <label htmlFor="tipoTreinamento" className="block text-sm font-medium mb-2 notranslate" translate="no">
                     Tipo de Treinamento *
                   </label>
-                  <Select name="tipoTreinamento" value={formData.tipoTreinamento} onValueChange={(value) => setFormData(prev => ({ ...prev, tipoTreinamento: value }))}>
+                  <Select name="tipoTreinamento" value={formData.tipoTreinamento} onValueChange={value => setFormData(prev => ({
+                  ...prev,
+                  tipoTreinamento: value
+                }))}>
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder="Selecione o treinamento" />
                     </SelectTrigger>
@@ -209,23 +187,10 @@ const TrainingSection = () => {
                   <label htmlFor="observacoes" className="block text-sm font-medium mb-2 notranslate" translate="no">
                     Observações
                   </label>
-                  <Textarea
-                    id="observacoes"
-                    name="observacoes"
-                    value={formData.observacoes}
-                    onChange={handleInputChange}
-                    placeholder="Informações adicionais sobre o treinamento desejado..."
-                    rows={4}
-                    className="w-full resize-none"
-                    translate="no"
-                  />
+                  <Textarea id="observacoes" name="observacoes" value={formData.observacoes} onChange={handleInputChange} placeholder="Informações adicionais sobre o treinamento desejado..." rows={4} className="w-full resize-none" translate="no" />
                 </div>
 
-                <Button 
-                  type="submit" 
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3 notranslate"
-                  translate="no"
-                >
+                <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3 notranslate" translate="no">
                   <Calendar className="h-5 w-5 mr-2" />
                   Solicitar Agendamento
                 </Button>
@@ -238,8 +203,6 @@ const TrainingSection = () => {
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default TrainingSection;
