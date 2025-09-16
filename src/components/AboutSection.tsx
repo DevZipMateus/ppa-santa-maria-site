@@ -24,6 +24,11 @@ const AboutSection = () => {
               <p className="text-muted-foreground leading-relaxed notranslate" translate="no">
                 Sempre buscamos nos atualizar sobre o que há de mais inovador no mercado para oferecer aos nossos clientes. Prezamos por uma experiência satisfatória, desde o atendimento inicial, a venda e o pós venda.
               </p>
+              
+              <h3 className="text-2xl font-semibold text-foreground mb-6 mt-8 notranslate" translate="no">Nossos Objetivos</h3>
+              <p className="text-muted-foreground leading-relaxed notranslate" translate="no">
+                Buscamos oferecer produtos diferenciados e com qualidade, visando a satisfação e o conforto em cada equipamento vendido.
+              </p>
             </div>
             <div className="space-y-6">
               <Card className="shadow-card-custom">
