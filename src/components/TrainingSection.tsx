@@ -84,9 +84,7 @@ const TrainingSection = () => {
                   <CheckCircle2 className="h-5 w-5 text-primary mt-0.5" />
                   <div>
                     <h4 className="font-medium notranslate" translate="no">Profissional com mais de 26 anos de experiência no setor</h4>
-                    <p className="text-sm text-muted-foreground notranslate" translate="no">
-                      Profissional com mais de 15 anos de experiência no setor
-                    </p>
+                    <p className="text-sm text-muted-foreground notranslate" translate="no">Profissional com mais de 26 anos de experiência no setor</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
