@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Calendar, Award, Clock, Users, CheckCircle2 } from 'lucide-react';
 
 const TrainingSection = () => {
@@ -10,6 +11,7 @@ const TrainingSection = () => {
     nome: '',
     email: '',
     empresa: '',
+    tipoTreinamento: '',
     observacoes: ''
   });
 
@@ -27,6 +29,7 @@ const TrainingSection = () => {
 *Nome:* ${formData.nome}
 *Email:* ${formData.email}
 *Empresa:* ${formData.empresa || 'Não informado'}
+*Tipo de Treinamento:* ${formData.tipoTreinamento}
 *Observações:* ${formData.observacoes || 'Nenhuma observação'}`;
 
     const whatsappUrl = `https://wa.me/5555981079091?text=${encodeURIComponent(message)}`;
@@ -37,6 +40,7 @@ const TrainingSection = () => {
       nome: '',
       email: '',
       empresa: '',
+      tipoTreinamento: '',
       observacoes: ''
     });
   };
@@ -178,6 +182,27 @@ const TrainingSection = () => {
                     className="w-full"
                     translate="no"
                   />
+                </div>
+
+                <div>
+                  <label htmlFor="tipoTreinamento" className="block text-sm font-medium mb-2 notranslate" translate="no">
+                    Tipo de Treinamento *
+                  </label>
+                  <Select name="tipoTreinamento" value={formData.tipoTreinamento} onValueChange={(value) => setFormData(prev => ({ ...prev, tipoTreinamento: value }))}>
+                    <SelectTrigger className="w-full">
+                      <SelectValue placeholder="Selecione o treinamento" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="Instalação de Portões Automáticos">Instalação de Portões Automáticos</SelectItem>
+                      <SelectItem value="Manutenção Preventiva">Manutenção Preventiva</SelectItem>
+                      <SelectItem value="Programação de Centrais">Programação de Centrais</SelectItem>
+                      <SelectItem value="Sistemas de Controle de Acesso">Sistemas de Controle de Acesso</SelectItem>
+                      <SelectItem value="Cancelas Automáticas">Cancelas Automáticas</SelectItem>
+                      <SelectItem value="Interfones e Videoporteiros">Interfones e Videoporteiros</SelectItem>
+                      <SelectItem value="Cercas Elétricas">Cercas Elétricas</SelectItem>
+                      <SelectItem value="Câmeras de Segurança">Câmeras de Segurança</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
 
                 <div>
