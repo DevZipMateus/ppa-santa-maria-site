@@ -105,7 +105,7 @@ const TrainingSection = () => {
               <Card className="text-center bg-background/30 backdrop-blur-sm border-border/50">
                 <CardContent className="pt-6">
                   <Clock className="h-8 w-8 text-primary mx-auto mb-3" />
-                  <h4 className="font-semibold notranslate" translate="no">3-14h</h4>
+                  <h4 className="font-semibold notranslate" translate="no">3-4h</h4>
                   <p className="text-sm text-muted-foreground notranslate" translate="no">Duração</p>
                 </CardContent>
               </Card>
