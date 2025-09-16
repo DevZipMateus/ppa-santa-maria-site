@@ -23,7 +23,7 @@ const HeroSection = () => {
               Distribuidor autorizado PPA em Santa Maria desde 2014, trazendo tecnologia com qualidade e segurança
             </h2>
             <p className="text-base sm:text-lg lg:text-xl mb-12 text-white/80 max-w-3xl mx-auto px-2 notranslate" translate="no">
-              Especialistas em movimentadores de portões, portas automáticas, <span className="notranslate" translate="no">cancelas</span> automáticas e peças de reposição para toda Santa Maria e região
+              Especialistas em movimentadores de portões, portas automáticas, <span className="notranslate" translate="no">cancelas</span> automáticas e peças de reposição para Santa Maria e região
             </p>
           </div>
 
