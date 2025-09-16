@@ -144,7 +144,8 @@ const Products = () => {
             "Aplicação: residências, condomínios de médio a grande porte",
             "Modelo: mono ou Jet Flex",
             "Peso: 125kg até 380kg",
-            "Opções disponíveis: portão duplo ou simples (1 folha ou 2 folhas), sendo modelos home, SK, Predial ou Condominium"
+            "Opções disponíveis: portão duplo ou simples (1 folha ou 2 folhas), sendo modelos home, SK, Predial ou Condominium",
+            "Tem que ser portões pivotante duplo"
           ]
         },
         {
