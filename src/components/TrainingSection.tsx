@@ -194,7 +194,7 @@ const TrainingSection = () => {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="Instalação de Portões Automáticos">Instalação de Portões Automáticos</SelectItem>
-                      <SelectItem value="Manutenção Preventiva">Manutenção Preventiva</SelectItem>
+                      <SelectItem value="Instalação de Motores de Portões">Instalação de Motores de Portões</SelectItem>
                       <SelectItem value="Programação de Centrais">Programação de Centrais</SelectItem>
                       <SelectItem value="Sistemas de Controle de Acesso">Sistemas de Controle de Acesso</SelectItem>
                       <SelectItem value="Cancelas Automáticas">Cancelas Automáticas</SelectItem>
