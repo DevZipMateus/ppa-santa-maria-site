@@ -905,7 +905,7 @@ const Products = () => {
                 <span className="hidden xs:inline">Carrinho </span>({getTotalItems()})
               </Button>
             </DialogTrigger>
-            <DialogContent className="max-w-[95vw] sm:max-w-2xl max-h-[85vh] overflow-y-auto mx-2 sm:mx-auto">
+            <DialogContent className="max-w-[95vw] sm:max-w-2xl max-h-[85vh] overflow-y-auto mx-2 sm:mx-auto p-4 sm:p-6">
               <DialogHeader>
                 <DialogTitle className="flex items-center gap-2 text-base sm:text-lg">
                   <ShoppingCart className="h-4 w-4 sm:h-5 sm:w-5" />
@@ -913,10 +913,10 @@ const Products = () => {
                 </DialogTitle>
               </DialogHeader>
               
-              <div className="space-y-3 sm:space-y-4">
+              <div className="space-y-3 sm:space-y-4 max-w-full overflow-hidden">
                 {cart.map((item, index) => (
-                  <div key={index} className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 border rounded-lg">
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-black rounded-lg overflow-hidden flex-shrink-0">
+                  <div key={index} className="flex items-center gap-2 sm:gap-4 p-2 sm:p-4 border rounded-lg max-w-full">
+                    <div className="w-10 h-10 sm:w-16 sm:h-16 bg-black rounded-lg overflow-hidden flex-shrink-0">
                       <img 
                         src={item.image} 
                         alt={item.name}
@@ -927,37 +927,39 @@ const Products = () => {
                       />
                     </div>
                     
-                    <div className="flex-1 min-w-0">
-                      <h4 className="font-semibold text-xs sm:text-sm leading-tight truncate">{item.name}</h4>
+                    <div className="flex-1 min-w-0 overflow-hidden">
+                      <h4 className="font-semibold text-xs sm:text-sm leading-tight line-clamp-2">{item.name}</h4>
                       <p className="text-xs text-muted-foreground truncate">{item.category}</p>
                     </div>
                     
-                    <div className="flex items-center space-x-1 sm:space-x-2 flex-shrink-0">
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        onClick={() => updateCartItemQuantity(item.name, -1)}
-                        className="h-6 w-6 sm:h-8 sm:w-8 p-0"
-                      >
-                        <Minus className="h-2 w-2 sm:h-3 sm:w-3" />
-                      </Button>
-                      <span className="text-xs sm:text-sm font-medium min-w-[1.5rem] sm:min-w-[2rem] text-center">
-                        {item.quantity}
-                      </span>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        onClick={() => updateCartItemQuantity(item.name, 1)}
-                        className="h-6 w-6 sm:h-8 sm:w-8 p-0"
-                      >
-                        <Plus className="h-2 w-2 sm:h-3 sm:w-3" />
-                      </Button>
+                    <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2 flex-shrink-0">
+                      <div className="flex items-center space-x-1">
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={() => updateCartItemQuantity(item.name, -1)}
+                          className="h-6 w-6 sm:h-8 sm:w-8 p-0"
+                        >
+                          <Minus className="h-2 w-2 sm:h-3 sm:w-3" />
+                        </Button>
+                        <span className="text-xs sm:text-sm font-medium min-w-[1.5rem] sm:min-w-[2rem] text-center">
+                          {item.quantity}
+                        </span>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={() => updateCartItemQuantity(item.name, 1)}
+                          className="h-6 w-6 sm:h-8 sm:w-8 p-0"
+                        >
+                          <Plus className="h-2 w-2 sm:h-3 sm:w-3" />
+                        </Button>
+                      </div>
                       
                       <Button
                         variant="destructive"
                         size="sm"
                         onClick={() => removeFromCart(item.name)}
-                        className="h-6 w-6 sm:h-8 sm:w-8 p-0 ml-1 sm:ml-2"
+                        className="h-6 w-6 sm:h-8 sm:w-8 p-0"
                       >
                         <Trash2 className="h-2 w-2 sm:h-3 sm:w-3" />
                       </Button>
@@ -966,10 +968,10 @@ const Products = () => {
                 ))}
                 
                 <div className="flex flex-col sm:flex-row justify-between gap-2 pt-4 border-t">
-                  <Button variant="outline" onClick={clearCart} className="text-xs sm:text-sm">
+                  <Button variant="outline" onClick={clearCart} className="text-xs sm:text-sm w-full sm:w-auto">
                     Limpar Carrinho
                   </Button>
-                  <Button onClick={sendWhatsAppCart} className="bg-green-600 hover:bg-green-700 text-xs sm:text-sm">
+                  <Button onClick={sendWhatsAppCart} className="bg-green-600 hover:bg-green-700 text-xs sm:text-sm w-full sm:w-auto">
                     <Phone className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
                     Enviar no WhatsApp
                   </Button>
