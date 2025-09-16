@@ -405,7 +405,7 @@ const Products = () => {
           name: "Central Dupla PPA",
           image: "/galeria/central_dupla_ppa.jpg",
           description: [
-            "Central de comando para automação de portões"
+            "Central de comando para automação de portões pivotante duplo"
           ]
         },
         {
