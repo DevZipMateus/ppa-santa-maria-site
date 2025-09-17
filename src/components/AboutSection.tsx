@@ -75,8 +75,11 @@ const AboutSection = () => {
 
           <div className="bg-primary/5 rounded-2xl p-8 text-center">
             <h3 className="text-2xl font-semibold text-foreground mb-4">Nossa missão</h3>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-4">
+              Buscamos oferecer produtos diferenciados e com qualidade, visando a satisfação e o conforto em cada equipamento vendido.
+            </p>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Queremos fidelizar ainda mais clientes, que estejam satisfeitos com os produtos adquiridos e que confiem em nosso trabalho, mantendo sempre a transparência, confiança e ética.
+              Nossa equipe é capacitada para oferecer suporte técnico, garantindo fácil manuseio e maior durabilidade dos produtos adquiridos.
             </p>
           </div>
         </div>
