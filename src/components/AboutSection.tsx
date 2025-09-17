@@ -29,8 +29,11 @@ const AboutSection = () => {
               </p>
               
               <h3 className="text-2xl font-semibold text-foreground mb-6 mt-8 notranslate" translate="no">Nossos Objetivos</h3>
-              <p className="text-muted-foreground leading-relaxed notranslate" translate="no">
+              <p className="text-muted-foreground mb-4 leading-relaxed notranslate" translate="no">
                 Buscamos oferecer produtos diferenciados e com qualidade, visando a satisfação e o conforto em cada equipamento vendido.
+              </p>
+              <p className="text-muted-foreground leading-relaxed notranslate" translate="no">
+                Nosso foco está em movimentadores de portões residenciais, para condomínios e indústrias, portas automáticas, cancelas automáticas e peças de reposição.
               </p>
             </div>
             <div className="space-y-6">
