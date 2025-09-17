@@ -21,8 +21,11 @@ const AboutSection = () => {
               <p className="text-muted-foreground mb-6 leading-relaxed notranslate" translate="no">
                 Há mais de 10 anos saímos da cidade de Garça, interior Paulista, para implantar nossa loja na cidade de Santa Maria. Pouco a pouco, os primeiros clientes foram chegando, e hoje, com os anos de experiência no mercado, diversos atendimentos prestados para empresas e residências, conseguimos fidelizar clientes e nos tornar participantes da construção de grandes empreendimentos e de novas histórias.
               </p>
-              <p className="text-muted-foreground leading-relaxed notranslate" translate="no">
+              <p className="text-muted-foreground mb-6 leading-relaxed notranslate" translate="no">
                 Sempre buscamos nos atualizar sobre o que há de mais inovador no mercado para oferecer aos nossos clientes. Prezamos por uma experiência satisfatória, desde o atendimento inicial, a venda e o pós venda.
+              </p>
+              <p className="text-muted-foreground leading-relaxed notranslate" translate="no">
+                Entre em contato e venha conhecer nosso ponto de vendas. Vamos juntos construir o conforto e segurança que você merece!
               </p>
               
               <h3 className="text-2xl font-semibold text-foreground mb-6 mt-8 notranslate" translate="no">Nossos Objetivos</h3>
